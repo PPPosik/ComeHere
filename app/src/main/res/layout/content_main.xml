@@ -20,7 +20,7 @@
             android:paddingLeft="16dp"
             android:paddingBottom="5.6dp"
             android:text="공모전 ; 카테고리"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textColor"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
 
             <android.support.v7.widget.RecyclerView
@@ -37,7 +37,7 @@
             android:paddingLeft="16dp"
             android:paddingBottom="1.6dp"
             android:text= "세미나 ; 카테고리"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textColor"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
 
             <android.support.v7.widget.RecyclerView
