@@ -1,5 +1,6 @@
 package com.example.khj_pc.gaonnuri
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -83,6 +84,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.nav_camera -> {
                 // Handle the camera action
+                var intent: Intent = Intent(this, ChatActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_gallery -> {
 
