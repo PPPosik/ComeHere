@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         seminarRecyclerView.layoutManager = GridLayoutManager(this, 3)
         seminarRecyclerView.adapter = RecyclerViewItemAdapter(testData, this)
         seminarRecyclerView.isNestedScrollingEnabled = false
+
+        val intent : Intent = Intent(this, DialogActivity::class.java)
+        startActivity(intent)
     }
 
     fun testDataAdd(){

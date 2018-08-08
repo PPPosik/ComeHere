@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:drawable/dialog_holo_light_frame">
+
+    <EditText
+        android:id="@+id/pwText"
+        android:hint="ID"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/idText"
+        android:hint="PW"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/nameText"
+        android:hint="Name"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#72d39b"
+        android:lineSpacingExtra="10sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="51.4dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"
+        android:layout_gravity="center"
+        android:text="본 행사는 결제를 해야하는 행사입니다. 결제를 진행하시겠습니까?" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="50dp"
+        android:paddingTop="26dp"
+        android:orientation="horizontal">
+        
+        <Button
+            android:id="@+id/yes_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/button_round"/>
+
+        <Button
+            android:id="@+id/no_button"
+            android:layout_marginLeft="24dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/button_round"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
