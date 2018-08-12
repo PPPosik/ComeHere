@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    val testData : ArrayList<String> = ArrayList()
+    val testData: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         seminarRecyclerView.isNestedScrollingEnabled = false
     }
 
-    fun testDataAdd(){
+    fun testDataAdd() {
         testData.add("AAA")
         testData.add("BBB")
         testData.add("CCC")
@@ -88,7 +88,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
             R.id.nav_gallery -> {
-
+                var intent: Intent = Intent(this, SearchActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_slideshow -> {
 
