@@ -42,10 +42,12 @@
                 android:background="@android:color/transparent"
                 android:ellipsize="end"
                 android:hint="Say something…"
+                android:lineSpacingExtra="2sp"
                 android:maxLines="1"
                 android:paddingLeft="23dp"
                 android:paddingRight="23dp"
-                android:textColor="#99ffc4" />
+                android:textColor="#99ffc4"
+                android:textColorHint="#99ffc4" />
 
             <ImageView
                 android:id="@+id/chat_send"

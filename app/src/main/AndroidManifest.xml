@@ -20,9 +20,10 @@
             </intent-filter>
         </activity>
         <activity
+
             android:name=".ChatActivity"
             android:label="@string/title_activity_chat"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar.ChatActivity"></activity>
     </application>
 
 </manifest>
