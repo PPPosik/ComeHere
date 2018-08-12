@@ -42,6 +42,7 @@
                 android:background="@android:color/transparent"
                 android:ellipsize="end"
                 android:hint="Say something…"
+                android:textColorHint="#99ffc4"
                 android:maxLines="1"
                 android:paddingLeft="23dp"
                 android:paddingRight="23dp"

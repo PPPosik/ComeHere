@@ -1,5 +1,6 @@
 package com.example.khj_pc.gaonnuri
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -10,6 +11,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.support.v7.widget.GridLayoutManager
+import android.widget.Adapter
+import com.example.khj_pc.gaonnuri.Adapter.ViewPageAdapter
+import kotlinx.android.synthetic.main.activity_dialog.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*

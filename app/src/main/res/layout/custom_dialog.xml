@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:drawable/dialog_holo_light_frame">
+    android:background="#ffffff">
+    <!--android:background="@android:drawable/dialog_holo_light_frame" >-->
 
     <EditText
         android:id="@+id/pwText"
@@ -30,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:textColor="#72d39b"
+        android:textColor="@color/colorPrimary"
         android:lineSpacingExtra="10sp"
         android:gravity="center_horizontal"
         android:layout_marginTop="51.4dp"

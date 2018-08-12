@@ -6,75 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="10dp" />
-
-    <ImageView
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="200.9dp"
-        android:src="@drawable/detail_sample"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
 
-    <LinearLayout
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
         android:layout_width="match_parent"
-        android:layout_height="328.5dp"
-        android:orientation="vertical"
-        android:paddingLeft="38.4dp"
-        android:paddingRight="38.4dp"
-        android:background="@color/backgroundColor" >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="37.6dp"
-            android:singleLine="false"
-            android:textSize="14sp"
-            android:textColor="@color/textColor"
-            android:lineSpacingExtra="10sp"
-            android:text=" 해커해커톤은 해커톤에서 발생하는 문제를 개선하기 위한 해커톤으로 기존의 해커톤과는 다른 방식의 해커톤을 개최하기 위한 해커톤 입니다. 해커톤을 운영하는 팀인 만지는 지난 2년간 한국에서 열리는 24개의 해커톤에 참여해 해커톤 자체의 미래에 대한"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="37.6dp"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:textColor="@color/textColor"
-            android:lineSpacingExtra="2sp"
-            android:text="해커 해커톤 ; 해커톤을 혁신하라"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="34.8dp"
-                android:textSize="13sp"
-                android:textColor="#75d49d"
-                android:lineSpacingExtra="3sp"
-                android:text="주최자 이민규(만지)"
-                />
-            
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-            
-            <Button
-                android:id="@+id/dialog_button"
-                android:layout_marginTop="12.2dp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:gravity="right|top"
-                android:background="@drawable/button_round"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        android:layout_height="85.7dp"
+        app:tabPaddingStart="5dp"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />
 
 </LinearLayout>
