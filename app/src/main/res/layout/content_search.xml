@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".SearchActivity"
+    tools:showIn="@layout/activity_search">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="88dp">
+
+            <ImageView
+                android:id="@+id/view1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="25.1dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="33.1dp"
+                android:src="@drawable/ic_search_green_24dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="37dp"
+                android:layout_toRightOf="@id/view1"
+                android:background="@android:color/transparent"
+                android:lineSpacingExtra="5sp"
+                android:textColor="#99ffc4"
+                android:textSize="26sp"
+                tools:text="해커해커톤" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f1fffa">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/search_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

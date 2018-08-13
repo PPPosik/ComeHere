@@ -25,6 +25,8 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setElevation(0.0f
+        );
 
         recyclerView = findViewById(R.id.chat_recyclerview);
         chats = new ArrayList<>();
