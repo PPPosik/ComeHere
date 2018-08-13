@@ -13,6 +13,7 @@ import okhttp3.RequestBody
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 /**
  * Created by baehyeonbin on 2017. 9. 3..
  */
@@ -30,7 +31,7 @@ object RetrofitUtil {
         val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor { chain ->
             val original = chain.request()
-            val token : String = ""
+            val token : String = SharedPreferenceUtil.getPreference(context, "token")!!
             val request = original.newBuilder()
                     .header("authorization", token)
                     .method(original.method(), original.body())
@@ -58,4 +59,25 @@ object RetrofitUtil {
 
 fun ImageView.loadUrl(url : String) {
     Glide.with(context).load(url).into(this)
+}
+
+object SharedPreferenceUtil {
+    fun getPreference(context: Context, key: String): String? {
+        val sharedPreferences = context.getSharedPreferences("gaonnuri", Context.MODE_PRIVATE)
+        return sharedPreferences.getString(key, null)
+    }
+
+    fun savePreferences(context: Context, key: String, data: String) {
+        val sharedPreferences = context.getSharedPreferences("gaonnuri", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString(key, data)
+        editor.commit()
+    }
+
+    fun removePreferences(context: Context, key: String) {
+        val pref = context.getSharedPreferences("gaonnuri", Context.MODE_PRIVATE)
+        val editor = pref.edit()
+        editor.remove(key)
+        editor.commit()
+    }
 }
