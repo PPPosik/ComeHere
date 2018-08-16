@@ -37,7 +37,7 @@
                 android:layout_toRightOf="@id/view1"
                 android:background="@android:color/transparent"
                 android:lineSpacingExtra="5sp"
-                android:textColor="#99ffc4"
+                android:textColor="#172434"
                 android:textSize="26sp"
                 tools:text="해커해커톤" />
         </RelativeLayout>
@@ -45,7 +45,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#f1fffa">
+            android:background="#182535">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/search_recyclerview"

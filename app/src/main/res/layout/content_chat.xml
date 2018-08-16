@@ -46,8 +46,8 @@
                 android:maxLines="1"
                 android:paddingLeft="23dp"
                 android:paddingRight="23dp"
-                android:textColor="#99ffc4"
-                android:textColorHint="#99ffc4" />
+                android:textColor="#172434"
+                android:textColorHint="#172434" />
 
             <ImageView
                 android:id="@+id/chat_send"

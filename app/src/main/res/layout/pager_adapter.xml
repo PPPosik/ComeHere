@@ -20,7 +20,7 @@
         android:orientation="vertical"
         android:paddingLeft="38.4dp"
         android:paddingRight="38.4dp"
-        android:background="@color/backgroundColor" >
+        android:background="#cadffa" >
 
         <TextView
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="34.8dp"
                 android:textSize="13sp"
-                android:textColor="#75d49d"
+                android:textColor="#2f4663"
                 android:lineSpacingExtra="3sp"
                 android:text="주최자 이민규(만지)"
                 />

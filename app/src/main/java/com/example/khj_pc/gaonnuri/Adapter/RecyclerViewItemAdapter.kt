@@ -1,10 +1,11 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.khj_pc.gaonnuri.R
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 class RecyclerViewItemAdapter(val items : ArrayList<String>, val context : Context) : RecyclerView.Adapter<ViewHolder>(){

@@ -17,7 +17,7 @@
             android:id="@+id/chat_user_icon"
             android:layout_width="46.1dp"
             android:layout_height="46.1dp"
-            android:background="#99ffc4"
+            android:background="#cadffa"
             android:padding="12.4dp"
             android:src="@drawable/ic_person_white_24dp" />
 
@@ -34,7 +34,7 @@
                 android:layout_marginTop="8.6dp"
                 android:lineSpacingExtra="2sp"
                 android:text="익명"
-                android:textColor="#72d39b"
+                android:textColor="#172434"
                 android:textSize="13sp" />
 
             <TextView
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="2sp"
                 android:text="2h ago"
-                android:textColor="#72d39b"
+                android:textColor="#172434"
                 android:textSize="9sp" />
 
         </LinearLayout>
@@ -61,7 +61,7 @@
         android:layout_marginTop="16.3dp"
         android:lineSpacingExtra="10sp"
         android:text="7시부터는"
-        android:textColor="#72d39b"
+        android:textColor="#172434"
         android:textSize="14sp" />
 
 

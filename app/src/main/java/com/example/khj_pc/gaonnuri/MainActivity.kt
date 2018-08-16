@@ -1,19 +1,14 @@
 package com.example.khj_pc.gaonnuri
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
 import android.view.MenuItem
 import android.support.v7.widget.GridLayoutManager
-import android.widget.Adapter
-import com.example.khj_pc.gaonnuri.Adapter.ViewPageAdapter
-import kotlinx.android.synthetic.main.activity_dialog.*
+import com.example.khj_pc.gaonnuri.Adapter.RecyclerViewItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -48,8 +43,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         seminarRecyclerView.adapter = RecyclerViewItemAdapter(testData, this)
         seminarRecyclerView.isNestedScrollingEnabled = false
 
-        val intent : Intent = Intent(this, DialogActivity::class.java)
-        startActivity(intent)
     }
 
     fun testDataAdd() {
@@ -99,7 +92,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
             R.id.nav_slideshow -> {
-
+                var intent: Intent = Intent(this, DialogActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_manage -> {
 

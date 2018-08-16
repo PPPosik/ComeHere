@@ -34,7 +34,7 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull ChatRecyclerViewAdapter.ChatRecyclerViewViewHolder holder, int position) {
         Chat chat = chats.get(position);
-        holder.root.setBackgroundColor(Color.parseColor(position % 2 == 0 ? "#f1fffa" : "#ffffff"));
+        holder.root.setBackgroundColor(Color.parseColor(position % 2 == 0 ? "#f5f9ff" : "#ffffff"));
         holder.username.setText(chat.getUserName());
         holder.time.setText(chat.getTime());
         holder.content.setText(chat.getContent());
