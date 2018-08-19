@@ -96,7 +96,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
             R.id.nav_manage -> {
-
+                var intent: Intent = Intent(this, BoardActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_share -> {
 
