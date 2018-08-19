@@ -25,7 +25,7 @@ class RegisterActivity : AppCompatActivity(){
             hint_tmp = edit.hint.toString()
             edit.gravity = Gravity.START or Gravity.CENTER
             edit.hint = ""
-            edit.textSize = 18.toString().toFloat()
+            edit.textSize = (18 as Integer).toFloat()
 
             input = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             input.showSoftInput(edit, InputMethodManager.SHOW_IMPLICIT)
@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity(){
         else{
             if(edit.text.isEmpty()) {
                 edit.gravity = Gravity.END or Gravity.CENTER
-                edit.textSize = 14.toString().toFloat()
+                edit.textSize = (14 as Integer).toFloat()
             }
             edit.hint = hint_tmp
         }
