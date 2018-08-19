@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class Result(val message : String)
 
-data class LoginResult(val id : String, val token : String)
+data class LoginResult(val id : String, val token : String, val message : String)
+
+data class LoginUser(val id : String, val password : String)
 
 data class User(val id : String, val name : String, val password : String)
 

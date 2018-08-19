@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitUtil {
 
     var retrofit = Retrofit.Builder()
-            .baseUrl("http://purplebeen.kr:2345")
+            .baseUrl("http://13.124.86.54:23002/api/v1g1/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -41,7 +41,7 @@ object RetrofitUtil {
 
         val client = httpClient.build()
         return Retrofit.Builder()
-                .baseUrl("http://purplebeen.kr:2345")
+                .baseUrl("http://13.124.86.54:23002/api/v1g1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
