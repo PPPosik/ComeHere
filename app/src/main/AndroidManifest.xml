@@ -35,6 +35,16 @@
             android:name=".BoardActivity"
             android:label="@string/title_activity_board"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

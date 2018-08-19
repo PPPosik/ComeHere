@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#f5f9ff"
+    android:focusableInTouchMode="true" >
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="8sp"
+                android:text="가온누리"
+                android:textColor="#ffffff"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="10sp"
+                android:text="로그인이당"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+    
+    <EditText
+        android:id="@+id/login_email"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="44dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:hint="e-mail"
+        android:textColor="@color/colorPrimary"
+        android:singleLine="true"
+        android:background="@drawable/edittext_round" />
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColor="@color/colorPrimary"
+        android:singleLine="true"
+        android:background="@drawable/edittext_round" />
+    
+    <View
+        android:layout_width="24dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:textSize="13sp"
+        android:text="LOGIN"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_login_round" />
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="17dp"
+        android:textSize="13sp"
+        android:text="Create an Account"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/edittext_round" />
+
+    <Button
+        android:id="@+id/facebook_button"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="17dp"
+        android:textSize="13sp"
+        android:text="LOGIN WITH FACEBOOK"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/edittext_round" />
+
+</LinearLayout>
