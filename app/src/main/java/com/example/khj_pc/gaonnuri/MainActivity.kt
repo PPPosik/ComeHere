@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.Menu
 import com.example.khj_pc.gaonnuri.Adapter.RecyclerViewItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -59,11 +60,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.main, menu)
-//        return true
-//    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
 //
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        // Handle action bar item clicks here. The action bar will
@@ -78,27 +79,37 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
+            R.id.menu_list -> {
                 // Handle the camera action
                 var intent: Intent = Intent(this, ChatActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_gallery -> {
+            R.id.menu_search -> {
                 var intent: Intent = Intent(this, SearchActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_slideshow -> {
+            R.id.menu_chat -> {
                 var intent: Intent = Intent(this, DialogActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_manage -> {
+            R.id.menu_notifications -> {
                 var intent: Intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_share -> {
+            R.id.menu_photos -> {
                 var intent: Intent = Intent(this, BoardActivity::class.java)
+                startActivity(intent)
             }
-            R.id.nav_send -> {
+            R.id.menu_videos -> {
+
+            }
+            R.id.menu_places -> {
+
+            }
+            R.id.menu_settings -> {
+
+            }
+            R.id.menu_search_tmp -> {
 
             }
         }
