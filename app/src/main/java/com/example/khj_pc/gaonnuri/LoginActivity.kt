@@ -1,6 +1,7 @@
 package com.example.khj_pc.gaonnuri
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -23,7 +24,14 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        autoLogin()
         setListeners()
+    }
+
+    fun autoLogin() { //토큰 체크해서 있으면 자동로그인
+        if(SharedPreferenceUtil.getPreference(applicationContext, "token") != null) {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     fun setListeners() {
@@ -32,7 +40,6 @@ class LoginActivity : AppCompatActivity(){
         }
 
         register_button.setOnClickListener {
-            toast(register_button.text)
             loginIntent = Intent(this, RegisterActivity::class.java)
             startActivity(loginIntent)
         }
@@ -62,10 +69,17 @@ class LoginActivity : AppCompatActivity(){
                         }
                         response.code() == 401 -> toast("패스워드가 일치하지 않습니다")
                         response.code() == 404 -> toast("존재하지 않는 유저입니다.")
-                        else -> Log.e(TAG, response.body()!!.message)
+                        else -> toast("오류가 발생하였습니다. 입력값을 확인해주세요")
                     }
                 }
 
         })
+    }
+
+    override fun finish() {
+        super.finish()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            finishAffinity()
+        }
     }
 }
