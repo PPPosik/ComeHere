@@ -24,8 +24,16 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+
+        //TODO 지우기
+        startActivity(Intent(this@LoginActivity, BoardActivity::class.java))
+
+
+
         autoLogin()
         setListeners()
+
+
     }
 
     fun autoLogin() { //토큰 체크해서 있으면 자동로그인

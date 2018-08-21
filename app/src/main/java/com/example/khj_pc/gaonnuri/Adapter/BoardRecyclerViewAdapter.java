@@ -1,6 +1,7 @@
 package com.example.khj_pc.gaonnuri.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.khj_pc.gaonnuri.BoardDetailActivity;
 import com.example.khj_pc.gaonnuri.Data.Board;
 import com.example.khj_pc.gaonnuri.R;
 
@@ -43,13 +45,21 @@ public class BoardRecyclerViewAdapter extends RecyclerView.Adapter<BoardRecycler
 
     @Override
     public void onBindViewHolder(@NonNull BoardRecyclerViewAdapter.BoardRecyclerViewViewHolder holder, int position) {
-        Board board = boards.get(position);
+        final Board board = boards.get(position);
         if (board.getType() == 0) { //type 0이면 공지글
             holder.root.setBackgroundColor(Color.parseColor("#cadffa"));
         } else {
             int idx = position - getNoticeCnt();
             holder.root.setBackgroundColor(Color.parseColor(idx % 2 == 1 ? "#f5f9ff" : "#ffffff"));
         }
+        holder.root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, BoardDetailActivity.class);
+                intent.putExtra("board", board);
+                context.startActivity(intent);
+            }
+        });
         holder.title.setText(board.getTitle());
         holder.author.setText(board.getAuthor());
         holder.like.setText(String.valueOf(board.getLikes()));

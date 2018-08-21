@@ -29,24 +29,25 @@ public class BoardActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         recyclerView = findViewById(R.id.board_recyclerview);
         boards = new ArrayList<>();
-        boards.add(new Board("참가자 필독", "장원준(운영자)", "", 120, 0));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
-        boards.add(new Board("자유게시물", "배현빈", "", 21, 1));
+        boards.add(new Board("참가자 필독", "장원준(운영자)", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 120, 0));
+        boards.add(new Board("자유게시물", "배현빈",
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        boards.add(new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1));
+        for (Board b : boards) {
+            for (int i = 0; i < 3; i++)
+                b.setContent(b.getContent() + "\n" + b.getContent());
+        }
         adapter = new BoardRecyclerViewAdapter(this, boards);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
