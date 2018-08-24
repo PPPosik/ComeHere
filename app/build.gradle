@@ -43,5 +43,4 @@ dependencies {
     //slider 위해 필요
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.squareup.picasso:picasso:2.3.2'
-
 }

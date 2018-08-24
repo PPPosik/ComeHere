@@ -24,12 +24,6 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
-        //TODO 지우기
-        startActivity(Intent(this@LoginActivity, BoardActivity::class.java))
-
-
-
         autoLogin()
         setListeners()
 
@@ -72,6 +66,7 @@ class LoginActivity : AppCompatActivity(){
                     when {
                         response.code() == 200 -> {
                             toast("성공적으로 로그인하였습니다!")
+                            SharedPreferenceUtil.savePreferences(applicationContext, "username", response.body()!!.id)
                             SharedPreferenceUtil.savePreferences(applicationContext, "token", response.body()!!.token)
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                         }

@@ -9,16 +9,27 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.Menu
 import com.example.khj_pc.gaonnuri.Adapter.RecyclerViewItemAdapter
+import com.example.khj_pc.gaonnuri.Data.Room
+import com.example.khj_pc.gaonnuri.Data.UserResult
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import org.jetbrains.anko.toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     val testData: ArrayList<String> = ArrayList()
+    lateinit var dataList : List<Room>
 
+    companion object {
+        val TAG : String = MainActivity::class.java.simpleName
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,15 +42,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        testDataAdd()
+        loadData()
+    }
+
+    fun setRecyclerView() {
         competitionRecyclerView.layoutManager = GridLayoutManager(this, 3)
-        competitionRecyclerView.adapter = RecyclerViewItemAdapter(testData, this)
+        competitionRecyclerView.adapter = RecyclerViewItemAdapter(dataList, this)
         competitionRecyclerView.isNestedScrollingEnabled = false
 
         seminarRecyclerView.layoutManager = GridLayoutManager(this, 3)
-        seminarRecyclerView.adapter = RecyclerViewItemAdapter(testData, this)
+        seminarRecyclerView.adapter = RecyclerViewItemAdapter(dataList, this)
         seminarRecyclerView.isNestedScrollingEnabled = false
-
     }
 
     fun testDataAdd() {
@@ -65,16 +78,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        when (item.itemId) {
-//            R.id.action_settings -> return true
-//            else -> return super.onOptionsItemSelected(item)
-//        }
-//    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
@@ -116,5 +119,35 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun loadData() {
+        val userName : String? = SharedPreferenceUtil.getPreference(applicationContext, "username")
+        Log.d("asdf", userName)
+        val userService : UserService = RetrofitUtil.getLoginRetrofit(applicationContext).create(UserService::class.java)
+        val call : Call<UserResult> = userService.getUserInfo(userName!!)
+        call.enqueue(object : Callback<UserResult> {
+            override fun onFailure(call: Call<UserResult>?, t: Throwable?) {
+                Log.e(TAG, t.toString())
+            }
+
+            override fun onResponse(call: Call<UserResult>?, response: Response<UserResult>?) {
+                Log.e("test", response!!.code().toString())
+                if(response != null && response.isSuccessful) {
+                    when(response.code()) {
+                        200 -> {
+                            toast("성공적으로 데이터가 로딩되었습니다.")
+                            dataList = response.body()!!.room_string
+                            Log.d("size", dataList.size.toString())
+                            setRecyclerView()
+                        }
+                        401 -> {
+                            toast("로그인 정보가 일치하지 않습니다")
+                        }
+                    }
+                }
+            }
+
+        })
     }
 }

@@ -33,7 +33,7 @@ object RetrofitUtil {
             val original = chain.request()
             val token : String = SharedPreferenceUtil.getPreference(context, "token")!!
             val request = original.newBuilder()
-                    .header("authorization", token)
+                    .header("x-access-token", token)
                     .method(original.method(), original.body())
                     .build()
             chain.proceed(request)
