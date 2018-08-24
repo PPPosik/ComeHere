@@ -5,26 +5,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.content.Context
 import android.view.LayoutInflater
+import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Dialog.CustomDialog
 import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.loadUrl
 import kotlinx.android.synthetic.main.pager_adapter.view.*
 
-class ViewPageAdapter(val items : ArrayList<String>, context : Context) : PagerAdapter(){
+class ViewPageAdapter(val room: Room, context: Context) : PagerAdapter() {
     var inflater = LayoutInflater.from(context)
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        var v : View? = null
-
-        if(position % 2 == 0){
-            v = inflater.inflate(R.layout.pager_adapter, container, false)
-            v.dialog_button.setOnClickListener {
-                val customDialog = CustomDialog(container.context)
-                customDialog.callFunction()
-            }
+        var v: View? = null
+        v = inflater.inflate(R.layout.pager_adapter, container, false)
+        v.dialog_button.setOnClickListener {
+            val customDialog = CustomDialog(container.context)
+            customDialog.callFunction()
         }
-        else{
-            v = inflater.inflate(R.layout.viewpage_text, container, false)
-        }
+        v.imageView.loadUrl("http://ssumon.com:23002/images/${room.images[position]}")
+        v.contextText.text = room.context
+        v.requestPersonId.text = room.requestPersonId
+        v.questName.text = room.questionName
 
         container.addView(v)
         return v
@@ -36,6 +36,6 @@ class ViewPageAdapter(val items : ArrayList<String>, context : Context) : PagerA
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean = (view == `object`)
 
-    override fun getCount(): Int = 4
+    override fun getCount(): Int = room.images.size
 
 }

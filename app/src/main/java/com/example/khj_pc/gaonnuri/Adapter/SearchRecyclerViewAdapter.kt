@@ -15,8 +15,10 @@ import kotlinx.android.synthetic.main.content_search.view.*
 import kotlinx.android.synthetic.main.item_search.view.*
 
 import android.R.attr.name
+import android.content.Intent
 import android.text.method.TextKeyListener.clear
 import android.util.Log
+import com.example.khj_pc.gaonnuri.DialogActivity
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -35,6 +37,11 @@ class SearchRecyclerViewAdapter(private val context: Context, private var rooms:
         if(isFiltered) {
             holder.root.item_search_ppl.text = room.peopleNumMax.toString()
             holder.root.item_search_name.text = room.questionName
+            holder.root.setOnClickListener {
+                var intent : Intent = Intent(context, DialogActivity::class.java)
+                intent.putExtra("room", room)
+                context.startActivity(intent)
+            }
         }
     }
 
