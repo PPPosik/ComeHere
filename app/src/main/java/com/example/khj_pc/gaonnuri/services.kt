@@ -29,4 +29,7 @@ interface RoomService {
 
     @GET("room/get_room/{objId}")
     fun getSingleRoomInfo(@Path("obj_id") objectId : String) : Call<SingleRoomResult>
+
+    @GET("room/get_room_all")
+    fun getAllRoomData() : Call<List<Room>>
 }

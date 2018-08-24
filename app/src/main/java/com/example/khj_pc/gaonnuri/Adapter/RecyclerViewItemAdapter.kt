@@ -1,11 +1,14 @@
 package com.example.khj_pc.gaonnuri.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.khj_pc.gaonnuri.Data.Room
+import com.example.khj_pc.gaonnuri.DialogActivity
 import com.example.khj_pc.gaonnuri.R
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
@@ -20,8 +23,12 @@ class RecyclerViewItemAdapter(val items : List<Room>, val context : Context) : R
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var room : Room? = items.get(position)
-        if(room != null)
-            holder.button.text = items.get(position).title
+        if(room != null) {
+            holder.button.text = items.get(position).questionName
+            holder.button.setOnClickListener {
+                context.startActivity(Intent(context, DialogActivity::class.java))
+            }
+        }
     }
 }
 

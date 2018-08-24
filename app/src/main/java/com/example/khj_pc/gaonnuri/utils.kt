@@ -1,6 +1,7 @@
 package com.example.khj_pc.gaonnuri
 
 import android.content.Context
+import android.widget.ImageButton
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 
@@ -58,6 +59,10 @@ object RetrofitUtil {
 }
 
 fun ImageView.loadUrl(url : String) {
+    Glide.with(context).load(url).into(this)
+}
+
+fun ImageButton.loadImageFromUrl(url : String) {
     Glide.with(context).load(url).into(this)
 }
 
