@@ -16,7 +16,8 @@ data class User(val id : String, val name : String, val password : String) {
 
 data class UserResult(val _id : String, val name : String, val auth_id : String, val hashed_password : String, val create_at : String, val room_string : List<Room>)
 
-data class Room(@SerializedName("quest_name") val questionName : String,
+data class Room(val _id : String,
+                @SerializedName("quest_name") val questionName : String,
                 @SerializedName("request_person_id") val requestPersonId : String,
                 val title : String,
                 val context : String,

@@ -18,7 +18,7 @@ class ViewPageAdapter(val room: Room, context: Context) : PagerAdapter() {
         var v: View? = null
         v = inflater.inflate(R.layout.pager_adapter, container, false)
         v.dialog_button.setOnClickListener {
-            val customDialog = CustomDialog(container.context)
+            val customDialog = CustomDialog(container.context, room._id)
             customDialog.callFunction()
         }
         v.imageView.loadUrl("http://ssumon.com:23002/images/${room.images[position]}")

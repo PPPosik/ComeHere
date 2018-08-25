@@ -25,9 +25,6 @@ class RecyclerViewItemAdapter(val items : List<Room>, val context : Context) : R
         var room : Room? = items.get(position)
         if(room != null) {
             holder.button.text = items.get(position).questionName
-            holder.button.setOnClickListener {
-                context.startActivity(Intent(context, DialogActivity::class.java))
-            }
         }
     }
 }
