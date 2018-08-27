@@ -5,7 +5,7 @@ import java.io.Serializable
 
 data class Result(val message : String)
 
-data class LoginResult(val id : String, val token : String, val message : String)
+data class LoginResult(val id : String, val token : String, val message : String, val user : User)
 
 data class LoginUser(val id : String, val password : String)
 

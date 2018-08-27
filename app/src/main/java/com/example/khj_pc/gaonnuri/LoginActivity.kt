@@ -70,6 +70,7 @@ class LoginActivity : AppCompatActivity() {
                     response.code() == 200 -> {
                         toast("성공적으로 로그인하였습니다!")
                         SharedPreferenceUtil.savePreferences(applicationContext, "username", response.body()!!.id)
+                        SharedPreferenceUtil.savePreferences(applicationContext, "name", response.body()!!.user.name)
                         Log.d(TAG, "id = " + response.body()!!.id)
                         SharedPreferenceUtil.savePreferences(applicationContext, "token", response.body()!!.token)
                         startActivity(Intent(this@LoginActivity, MainActivity::class.java))
