@@ -8,12 +8,13 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import android.content.Context
 import android.util.Log
 import android.view.Menu
 import com.example.khj_pc.gaonnuri.Adapter.RecyclerViewItemAdapter
 import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Data.UserResult
+import com.example.khj_pc.gaonnuri.Listener.NavigationListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -22,7 +23,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
     val testData: ArrayList<String> = ArrayList()
     lateinit var dataList : List<Room>
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        nav_view.setNavigationItemSelectedListener(this)
+        nav_view.setNavigationItemSelectedListener(NavigationListener(this, drawer_layout))
 
         loadData()
     }
@@ -76,48 +77,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        when (item.itemId) {
-            R.id.menu_list -> {
-                // Handle the camera action
-                var intent: Intent = Intent(this, ChatActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.menu_search -> {
-                var intent: Intent = Intent(this, SearchActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.menu_chat -> {
-                var intent: Intent = Intent(this, DialogActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.menu_notifications -> {
-                var intent: Intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.menu_photos -> {
-                var intent: Intent = Intent(this, BoardActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.menu_videos -> {
-
-            }
-            R.id.menu_places -> {
-
-            }
-            R.id.menu_settings -> {
-
-            }
-            R.id.menu_search_tmp -> {
-
-            }
-        }
-
-        drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
 
