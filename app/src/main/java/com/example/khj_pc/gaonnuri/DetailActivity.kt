@@ -44,6 +44,7 @@ class DetailActivity : AppCompatActivity() {
 
         id = intent.getStringExtra("id")
         setNavigationDrawer()
+        setListeners()
         setBoardDummyData()
         loadData()
     }

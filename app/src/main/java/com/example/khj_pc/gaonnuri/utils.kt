@@ -13,6 +13,10 @@ import okhttp3.OkHttpClient
 import okhttp3.RequestBody
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.google.gson.reflect.TypeToken
+import com.google.gson.Gson
+
+
 
 
 /**
@@ -86,3 +90,5 @@ object SharedPreferenceUtil {
         editor.commit()
     }
 }
+
+

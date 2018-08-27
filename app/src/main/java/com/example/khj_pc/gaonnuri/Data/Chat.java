@@ -1,11 +1,13 @@
 package com.example.khj_pc.gaonnuri.Data;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Chat {
-
+    @SerializedName("author")
     private String userName;
-
+    @SerializedName("message")
     private String content;
-
+    @SerializedName("created_at")
     private String time;
 
     public Chat(String userName, String time, String context) {
