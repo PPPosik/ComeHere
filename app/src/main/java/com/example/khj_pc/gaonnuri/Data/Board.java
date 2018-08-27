@@ -34,6 +34,8 @@ public class Board implements Serializable {
     @SerializedName("images")
     private ArrayList<String> imageURL;
 
+    private ArrayList<Chat> chats;
+
 
     public Board(String roomId, String title, String author, String userAuthId, String content, int imageCount, String date, int likes, int type, ArrayList<String> imageURL) {
         this.roomId = roomId;

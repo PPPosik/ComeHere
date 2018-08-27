@@ -15,6 +15,8 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.example.khj_pc.gaonnuri.Data.Board;
 
+import java.util.ArrayList;
+
 public class BoardDetailActivity extends AppCompatActivity {
 
     private SliderLayout sliderLayout;
@@ -33,6 +35,14 @@ public class BoardDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         board = (Board) intent.getSerializableExtra("board");
+       /* ArrayList<String> imgUrl = new ArrayList<>();
+        imgUrl.add("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg");
+        imgUrl.add("https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg");
+        imgUrl.add("https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg");
+
+        board = new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1, null);
+
+     */
         if (board == null) {
             Toast.makeText(this, "정보를 가져오는데 오류발생", Toast.LENGTH_SHORT).show();
             finish();
@@ -53,6 +63,12 @@ public class BoardDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        findViewById(R.id.board_detail_comment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent1 = new Intent(BoardDetailActivity.this,)
             }
         });
 

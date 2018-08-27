@@ -25,14 +25,14 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setElevation(0.0f
-        );
+        getSupportActionBar().setElevation(0.0f);
 
         recyclerView = findViewById(R.id.chat_recyclerview);
         chats = new ArrayList<>();
         chats.add(new Chat("장원준(운영자)", "2h ago", "참가자 여러분들께서 피드에 자유롭게 질문을 남기셔도 됩니다."));
         chats.add(new Chat("배현빈", "2h ago", "네 알겠습니다."));
         chats.add(new Chat("익명", "2h ago", "7시부터는"));
+
         ChatRecyclerViewAdapter adapter = new ChatRecyclerViewAdapter(this, chats);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -1,6 +1,8 @@
 package com.example.khj_pc.gaonnuri.Data;
 
-public class Chat {
+import java.io.Serializable;
+
+public class Chat implements Serializable {
 
     private String userName;
 
