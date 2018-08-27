@@ -33,6 +33,7 @@ class ChatActivity : AppCompatActivity() {
     private var chats: ArrayList<Chat>? = null
     private lateinit var adapter : ChatRecyclerViewAdapter
     lateinit var mSocket : Socket
+    lateinit var roomId : String
 
     companion object {
         val TAG : String = ChatActivity::class.java.simpleName
@@ -44,6 +45,9 @@ class ChatActivity : AppCompatActivity() {
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         supportActionBar!!.elevation = 0.0f
+
+        roomId = intent.getStringExtra("id")
+        Log.d("roomid", roomId)
 
         mSocket = IO.socket("http://ssumon.com:23002")
         mSocket.connect()
@@ -83,7 +87,7 @@ class ChatActivity : AppCompatActivity() {
                 data.put("name", name)
                 data.put("id", id)
                 data.put("message", chat_content.text.toString())
-                data.put("room_object_id", "5b6a5df2dc111638ab02b864")
+                data.put("room_object_id", roomId)
                 mSocket.emit("send_message", data)
 
                 chat_content.setText("")
@@ -96,7 +100,7 @@ class ChatActivity : AppCompatActivity() {
     override fun finish() {
         val data = JSONObject()
         val id : String = SharedPreferenceUtil.getPreference(applicationContext, "username")!!
-        data.put("room_object_id", "5b6a5df2dc111638ab02b864")
+        data.put("room_object_id", roomId)
         data.put("id", id)
         mSocket.emit("leaveRoom", data)
         super.finish()
@@ -105,7 +109,7 @@ class ChatActivity : AppCompatActivity() {
         Log.d(TAG, "connected")
         val data = JSONObject()
         val id : String = SharedPreferenceUtil.getPreference(applicationContext, "username")!!
-        data.put("room_object_id", "5b6a5df2dc111638ab02b864")
+        data.put("room_object_id", roomId)
         data.put("id", id)
         mSocket.emit("joinRoom", data)
     }
@@ -113,12 +117,12 @@ class ChatActivity : AppCompatActivity() {
     val onInitData : Emitter.Listener = Emitter.Listener {args ->
         runOnUiThread {
             var data : JSONObject = args[0] as JSONObject
-            Log.d("data", data.toString())
+            Log.d("data2", data.toString())
             data = data.getJSONObject("result")
             val messages : JSONArray = data.getJSONArray("messages")
-            Log.d(TAG, "message : "  + messages[0].toString())
             val gson : Gson = Gson()
             chats = ArrayList(gson.fromJson(messages.toString() , Array<Chat>::class.java).toList())
+            Log.d(TAG, chats!!.size.toString())
             setRecyclerView()
         }
 
