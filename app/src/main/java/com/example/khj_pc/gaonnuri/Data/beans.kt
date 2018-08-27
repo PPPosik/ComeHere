@@ -40,3 +40,4 @@ data class SingleRoomResult(val _id : String,
                             val users : List<String>,
                             val images : List<String>,
                             val message : String)
+data class SingleBoardResult(val message : String, val status : Int, val data : Board)

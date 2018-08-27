@@ -25,6 +25,8 @@ class BoardActivity : AppCompatActivity() {
     private var boards: ArrayList<Board>? = null
     private var adapter: BoardRecyclerViewAdapter? = null
 
+    lateinit var roomId : String
+
     companion object {
         val TAG : String = BoardActivity::class.java.simpleName
     }
@@ -35,7 +37,7 @@ class BoardActivity : AppCompatActivity() {
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
-
+        roomId = intent.getStringExtra("id")
         boards = ArrayList()
 
         loadData()
@@ -46,12 +48,16 @@ class BoardActivity : AppCompatActivity() {
         board_recyclerview.layoutManager = LinearLayoutManager(this)
         board_recyclerview.adapter = adapter
         adapter!!.notifyDataSetChanged()
+    }
 
+    override fun onResume() {
+        super.onResume()
+        loadData()
     }
 
     fun loadData() {
         var postService : PostService = RetrofitUtil.getLoginRetrofit(applicationContext).create(PostService::class.java)
-        var call : Call<ArrayList<Board>> = postService.getAllPostFromRoomId("5b7fc8daa8323d32e3380a37")
+        var call : Call<ArrayList<Board>> = postService.getAllPostFromRoomId(roomId)
         call.enqueue(object : Callback<ArrayList<Board>> {
             override fun onFailure(call: Call<ArrayList<Board>>?, t: Throwable?) {
                 Log.e(TAG, t.toString())

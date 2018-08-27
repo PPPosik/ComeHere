@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,8 +15,15 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.example.khj_pc.gaonnuri.Data.Board;
+import com.example.khj_pc.gaonnuri.Data.SingleBoardResult;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static org.jetbrains.anko.ToastsKt.toast;
 
 public class BoardDetailActivity extends AppCompatActivity {
 
@@ -26,6 +34,8 @@ public class BoardDetailActivity extends AppCompatActivity {
     private TextView text2;
     private TextView time;
 
+    private static final String TAG  = BoardDetailActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +45,7 @@ public class BoardDetailActivity extends AppCompatActivity {
 
         final Intent intent = getIntent();
         board = (Board) intent.getSerializableExtra("board");
-       /* ArrayList<String> imgUrl = new ArrayList<>();
-        imgUrl.add("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg");
-        imgUrl.add("https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg");
-        imgUrl.add("https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg");
 
-        board = new Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1, null);
-
-     */
         if (board == null) {
             Toast.makeText(this, "정보를 가져오는데 오류발생", Toast.LENGTH_SHORT).show();
             finish();
@@ -79,4 +82,31 @@ public class BoardDetailActivity extends AppCompatActivity {
         time.setText(board.getDate());
     }
 
+    public void addLikes(View view) {
+        Log.e("ASDF4", "ASDF4");
+        PostService postService = RetrofitUtil.INSTANCE.getLoginRetrofit(getApplicationContext()).create(PostService.class);
+        Call<SingleBoardResult> call = postService.addLike(board.getRoomId(), board.getId());
+        call.enqueue(new Callback<SingleBoardResult>() {
+            @Override
+            public void onResponse(Call<SingleBoardResult> call, Response<SingleBoardResult> response) {
+                Log.e("code", Integer.toString(response.code()));
+                if(response.body() != null) {
+                    switch(response.code()) {
+                        case 200:
+                            Log.d(TAG, "success to like");
+                            break;
+                        default:
+                            if(response.body().getMessage() != null)
+                                Log.e(TAG, response.body().getMessage());
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SingleBoardResult> call, Throwable t) {
+                Log.e(TAG, t.toString());
+            }
+        });
+    }
 }
