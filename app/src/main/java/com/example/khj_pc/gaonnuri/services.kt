@@ -33,3 +33,8 @@ interface RoomService {
     @GET("room/get_room_all")
     fun getAllRoomData() : Call<List<Room>>
 }
+
+interface PostService {
+    @GET("post/get_all_post/{room_id}")
+    fun getAllPostFromRoomId(@Path("room_id") roomId : String) : Call<ArrayList<Board>>
+}
