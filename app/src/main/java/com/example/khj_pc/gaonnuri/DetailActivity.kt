@@ -11,10 +11,11 @@ import android.view.Menu
 import com.example.khj_pc.gaonnuri.Adapter.BoardRecyclerViewAdapter
 import com.example.khj_pc.gaonnuri.Adapter.DetailViewPageAdapter
 import com.example.khj_pc.gaonnuri.Data.Board
+import com.example.khj_pc.gaonnuri.Listener.DetailNavigationListener
 import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Data.SingleRoomResult
 import kotlinx.android.synthetic.main.activity_detail.*
-import com.example.khj_pc.gaonnuri.Listener.NavigationListener
+import com.example.khj_pc.gaonnuri.Listener.MainNavigationListener
 import kotlinx.android.synthetic.main.app_bar_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
 import kotlinx.android.synthetic.main.content_board.*
@@ -54,7 +55,7 @@ class DetailActivity : AppCompatActivity() {
                 this, detail_drawerLayout, detail_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         detail_drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        detail_nav_view.setNavigationItemSelectedListener(NavigationListener(this, detail_drawerLayout))
+        detail_nav_view.setNavigationItemSelectedListener(DetailNavigationListener(this, detail_drawerLayout))
     }
 
     fun setBoardDummyData() {
