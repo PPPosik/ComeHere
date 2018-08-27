@@ -50,7 +50,7 @@ public class Board implements Serializable {
         this.imageURL = imageURL;
     }
 
-    public Board(String userAuthId , String author, String title, String content, int imageCount,  ArrayList<String> imageURL) {
+    public Board(String userAuthId, String author, String title, String content, int imageCount, ArrayList<String> imageURL) {
         this.title = title;
         this.userAuthId = userAuthId;
         this.author = author;
@@ -71,6 +71,20 @@ public class Board implements Serializable {
         this.imageURL = imageURL;
     }
 
+    public Board(String id, String roomId, String title, String author, String userAuthId, String content, int imageCount, String date, int likes, int type, ArrayList<String> imageURL, ArrayList<Chat> chats) {
+        this.id = id;
+        this.roomId = roomId;
+        this.title = title;
+        this.author = author;
+        this.userAuthId = userAuthId;
+        this.content = content;
+        this.imageCount = imageCount;
+        this.date = date;
+        this.likes = likes;
+        this.type = type;
+        this.imageURL = imageURL;
+        this.chats = chats;
+    }
 
     public String getTitle() {
         return title;
@@ -126,5 +140,45 @@ public class Board implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
+    public String getUserAuthId() {
+        return userAuthId;
+    }
+
+    public void setUserAuthId(String userAuthId) {
+        this.userAuthId = userAuthId;
+    }
+
+    public int getImageCount() {
+        return imageCount;
+    }
+
+    public void setImageCount(int imageCount) {
+        this.imageCount = imageCount;
+    }
+
+    public ArrayList<Chat> getChats() {
+        return chats;
+    }
+
+    public void setChats(ArrayList<Chat> chats) {
+        this.chats = chats;
     }
 }

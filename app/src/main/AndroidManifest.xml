@@ -53,8 +53,10 @@
         <activity
             android:name=".DetailActivity"
             android:label="DetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CommentActivity"
+            android:label="@string/title_activity_comment"></activity>
     </application>
 
 </manifest>

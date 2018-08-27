@@ -33,7 +33,7 @@ public class BoardDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         board = (Board) intent.getSerializableExtra("board");
        /* ArrayList<String> imgUrl = new ArrayList<>();
         imgUrl.add("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg");
@@ -68,7 +68,9 @@ public class BoardDetailActivity extends AppCompatActivity {
         findViewById(R.id.board_detail_comment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent1 = new Intent(BoardDetailActivity.this,)
+                Intent intent1 = new Intent(BoardDetailActivity.this, CommentActivity.class);
+                intent1.putExtra("board", board);
+                startActivity(intent1);
             }
         });
 
