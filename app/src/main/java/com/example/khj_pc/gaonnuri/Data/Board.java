@@ -26,9 +26,12 @@ public class Board implements Serializable {
     @SerializedName("image_count")
     private int imageCount;
 
+    @SerializedName("created_at")
     private String date;
     private int likes;
     private int type;
+
+    @SerializedName("images")
     private ArrayList<String> imageURL;
 
 
