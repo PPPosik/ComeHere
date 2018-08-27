@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view" >
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/detail_menu_list"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="행사목록" />
+        <item
+            android:id="@+id/detail_menu_search"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="검색" />
+        <item
+            android:id="@+id/detail_menu_board"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="게시판" />
+        <item
+            android:id="@+id/detail_menu_chat"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="채팅" />
+        <item
+            android:id="@+id/detail_menu_logout"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="로그아웃" />
+
+    </group>
+
+</menu>

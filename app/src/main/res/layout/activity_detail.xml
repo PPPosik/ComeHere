@@ -24,7 +24,7 @@
         android:background="@color/colorPrimary"
         app:itemTextColor="#ffffff"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" >
+        app:menu="@menu/activity_detail_drawer" >
 
     </android.support.design.widget.NavigationView>
 

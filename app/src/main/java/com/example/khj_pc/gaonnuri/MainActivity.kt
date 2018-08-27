@@ -1,20 +1,16 @@
 package com.example.khj_pc.gaonnuri
 
-import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.view.MenuItem
 import android.support.v7.widget.GridLayoutManager
-import android.content.Context
 import android.util.Log
 import android.view.Menu
 import com.example.khj_pc.gaonnuri.Adapter.RecyclerViewItemAdapter
 import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Data.UserResult
-import com.example.khj_pc.gaonnuri.Listener.NavigationListener
+import com.example.khj_pc.gaonnuri.Listener.MainNavigationListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -41,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        nav_view.setNavigationItemSelectedListener(NavigationListener(this, drawer_layout))
+        nav_view.setNavigationItemSelectedListener(MainNavigationListener(this, drawer_layout))
 
         loadData()
     }

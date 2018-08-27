@@ -4,44 +4,16 @@
     tools:showIn="navigation_view" >
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/menu_list"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="행사 목록" />
-        <item
-            android:id="@+id/menu_search"
+            android:id="@+id/main_menu_search"
             android:icon="@drawable/ic_menu_gallery"
             android:title="검색" />
         <item
-            android:id="@+id/menu_chat"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="LIVE CHAT" />
-        <item
-            android:id="@+id/menu_notifications"
+            android:id="@+id/main_menu_logout"
             android:icon="@drawable/ic_menu_manage"
-            android:title="NOTIFICATIONS" />
+            android:title="로그아웃" />
 
-        <item
-            android:id="@+id/menu_photos"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="PHOTOS" />
-        <item
-            android:id="@+id/menu_videos"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="VIDEOS" />
-        <item
-            android:id="@+id/menu_places"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="PLACES" />
-        <item
-            android:id="@+id/menu_settings"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="SETTINGS" />
-
-        <item
-            android:id="@+id/menu_search_tmp"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="SEARCH" />
     </group>
 
 </menu>
