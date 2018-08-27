@@ -29,6 +29,7 @@
                 android:src="@drawable/ic_search_light_black_24dp" />
 
             <EditText
+                android:id="@+id/searchEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
@@ -39,6 +40,7 @@
                 android:lineSpacingExtra="5sp"
                 android:textColor="#172434"
                 android:textSize="26sp"
+                android:hint = "검색할 행사명 입력"
                 tools:text="해커해커톤" />
         </RelativeLayout>
 
@@ -51,6 +53,13 @@
                 android:id="@+id/search_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="데이터가 없습니다.\n 값을 입력해서 검색하세요" />
         </LinearLayout>
 
     </LinearLayout>

@@ -1,37 +1,62 @@
 package com.example.khj_pc.gaonnuri.Data;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Board implements Serializable {
+
+    @SerializedName("_id")
+    private String id;
+
+    @SerializedName("room_id")
+    private String roomId;
     private String title;
+
+    @SerializedName("user_name")
     private String author;
+
+    @SerializedName("user_auth_id")
+    private String userAuthId;
+
+    @SerializedName("context")
     private String content;
+
+    @SerializedName("image_count")
+    private int imageCount;
+
+    @SerializedName("created_at")
     private String date;
     private int likes;
     private int type;
+
+    @SerializedName("images")
     private ArrayList<String> imageURL;
 
-    public Board(String title, String author, String content, String date, int likes, int type, ArrayList<String> imageURL) {
+
+    public Board(String roomId, String title, String author, String userAuthId, String content, int imageCount, String date, int likes, int type, ArrayList<String> imageURL) {
+        this.roomId = roomId;
         this.title = title;
         this.author = author;
+        this.userAuthId = userAuthId;
         this.content = content;
+        this.imageCount = imageCount;
         this.date = date;
         this.likes = likes;
         this.type = type;
         this.imageURL = imageURL;
     }
 
-    public Board(String title, String author, String content, int likes, int type) {
+    public Board(String userAuthId , String author, String title, String content, int imageCount,  ArrayList<String> imageURL) {
         this.title = title;
+        this.userAuthId = userAuthId;
         this.author = author;
         this.content = content;
         this.likes = likes;
         this.type = type;
-        imageURL = new ArrayList<>();
-        imageURL.add("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg");
-        imageURL.add("https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg");
-        imageURL.add("https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg");
+        this.imageCount = imageCount;
+        this.imageURL = imageURL;
         this.date = "June 2, 2017";
     }
 

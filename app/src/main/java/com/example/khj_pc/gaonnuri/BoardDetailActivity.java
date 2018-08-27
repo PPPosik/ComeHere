@@ -39,8 +39,9 @@ public class BoardDetailActivity extends AppCompatActivity {
         }
         sliderLayout = findViewById(R.id.slider);
         for (String s : board.getImageURL()) {
+            String url = "http://ssumon.com:23002/images/" + s;
             DefaultSliderView defaultSliderView = new DefaultSliderView(this);
-            defaultSliderView.image(s).setScaleType(DefaultSliderView.ScaleType.CenterCrop);
+            defaultSliderView.image(url).setScaleType(DefaultSliderView.ScaleType.CenterCrop);
             sliderLayout.addSlider(defaultSliderView);
         }
 

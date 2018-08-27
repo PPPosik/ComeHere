@@ -27,6 +27,9 @@ class RecyclerViewItemAdapter(val items : List<Room>, val context : Context) : R
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var room : Room? = items.get(position)
         if(room != null) {
+            holder.button.text = items.get(position).questionName
+        }
+        if(room != null) {
             holder.button.text = items.get(position).title
             holder.button.setOnClickListener {
                 context.toast(holder.button.text)
