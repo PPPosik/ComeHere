@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:content=".CommentActivity"
+    tools:showIn="@layout/activity_comment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/comment_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/comment_console">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/comment_console"
+            android:layout_width="match_parent"
+            android:layout_height="53.7dp"
+            android:layout_alignParentBottom="true">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentTop="true"
+                android:background="#bce0fd" />
+
+            <EditText
+                android:id="@+id/comment_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/comment_send"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:hint="Say something…"
+                android:lineSpacingExtra="2sp"
+                android:maxLines="1"
+                android:paddingLeft="23dp"
+                android:paddingRight="23dp"
+                android:textColor="#172434"
+                android:textColorHint="#172434" />
+
+            <ImageView
+                android:id="@+id/comment_send"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="22.4dp"
+                android:src="@drawable/ic_arrow_forward_light_black_24dp" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
