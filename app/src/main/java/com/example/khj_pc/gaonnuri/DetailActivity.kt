@@ -6,20 +6,34 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import com.example.khj_pc.gaonnuri.Adapter.BoardRecyclerViewAdapter
 import com.example.khj_pc.gaonnuri.Adapter.DetailViewPageAdapter
 import com.example.khj_pc.gaonnuri.Data.Board
+import com.example.khj_pc.gaonnuri.Data.Room
+import com.example.khj_pc.gaonnuri.Data.SingleRoomResult
 import kotlinx.android.synthetic.main.activity_detail.*
 import com.example.khj_pc.gaonnuri.Listener.NavigationListener
 import kotlinx.android.synthetic.main.app_bar_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
 import kotlinx.android.synthetic.main.content_board.*
+import org.jetbrains.anko.toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DetailActivity : AppCompatActivity() {
 
     private val boards : ArrayList<Board> = ArrayList()
-    private val imgUrl : ArrayList<String> = ArrayList()
+    private var imgUrl : ArrayList<String> = ArrayList()
+
+    lateinit var id : String
+    lateinit var room : SingleRoomResult
+
+    companion object {
+        val TAG : String = DetailActivity::class.java.simpleName
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +42,21 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(detail_toolbar)
         supportActionBar?.title = null
 
+        id = intent.getStringExtra("id")
+        setNavigationDrawer()
+        setBoardDummyData()
+        loadData()
+    }
+
+    fun setNavigationDrawer() {
         val toggle = ActionBarDrawerToggle(
                 this, detail_drawerLayout, detail_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         detail_drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         detail_nav_view.setNavigationItemSelectedListener(NavigationListener(this, detail_drawerLayout))
+    }
 
+    fun setBoardDummyData() {
         boards.add(Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1))
         boards.add(Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1))
         boards.add(Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1))
@@ -47,18 +70,24 @@ class DetailActivity : AppCompatActivity() {
         board_recyclerview.adapter = adapter
         board_recyclerview.layoutManager = LinearLayoutManager(this)
         adapter.notifyDataSetChanged()
+    }
 
-        imgUrl.add("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg")
-        imgUrl.add("https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg")
-        imgUrl.add("https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg")
-
-        detail_viewpager.adapter = DetailViewPageAdapter(imgUrl, this)
-        detail_tablayout.setupWithViewPager(detail_viewpager, true)
-
+    fun setListeners() {
         home_button.setOnClickListener {
             var intent : Intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    fun setDetailViewPager(){
+        for (i in 0 until imgUrl.size) {
+            var s : String = imgUrl[i]
+            s = "http://ssumon.com:23002/images/" + s
+            imgUrl.set(i, s)
+        }
+        detail_viewpager.adapter = DetailViewPageAdapter(imgUrl, this)
+        detail_tablayout.setupWithViewPager(detail_viewpager, true)
+
     }
 
     override fun onBackPressed() {
@@ -72,5 +101,37 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return true
+    }
+
+    fun loadData() {
+        var roomService : RoomService = RetrofitUtil.getLoginRetrofit(applicationContext).create(RoomService::class.java)
+        var call : Call<SingleRoomResult> = roomService.getSingleRoomInfo(id)
+        call.enqueue(object : Callback<SingleRoomResult> {
+            override fun onFailure(call: Call<SingleRoomResult>, t: Throwable) {
+                Log.e(TAG, t.toString())
+            }
+
+            override fun onResponse(call: Call<SingleRoomResult>, response: Response<SingleRoomResult>) {
+                if(response.body() != null) {
+                    when(response.code()) {
+                        200 -> {
+                            room = response.body()!!
+                            imgUrl = ArrayList(room.images)
+                            questName.text = room.questionName
+                            setDetailViewPager()
+                        }
+
+                        401 -> {
+                            toast("해당하는 id가 없습니다")
+                        }
+
+                        500 -> {
+                            toast("Server Error!")
+                        }
+                    }
+                }
+            }
+
+        })
     }
 }

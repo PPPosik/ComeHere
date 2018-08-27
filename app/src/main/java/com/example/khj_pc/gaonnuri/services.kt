@@ -27,7 +27,7 @@ interface RoomService {
     @POST("room/enter/{id}/{objId}")
     fun enter(@Path("id") id : String, @Path("objId") objectId : String) : Call<Result>
 
-    @GET("room/get_room/{objId}")
+    @GET("room/get_room/{obj_id}")
     fun getSingleRoomInfo(@Path("obj_id") objectId : String) : Call<SingleRoomResult>
 
     @GET("room/get_room_all")

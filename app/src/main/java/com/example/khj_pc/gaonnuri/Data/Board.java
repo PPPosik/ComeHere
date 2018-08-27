@@ -48,6 +48,19 @@ public class Board implements Serializable {
         this.imageURL = imageURL;
     }
 
+    public Board(String title, String author, String content, int likes, int type) {
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.likes = likes;
+        this.type = type;
+        imageURL = new ArrayList<>();
+        imageURL.add("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg");
+        imageURL.add("https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg");
+        imageURL.add("https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg");
+        this.date = "June 2, 2017";
+    }
+
     public Board(String userAuthId , String author, String title, String content, int imageCount,  ArrayList<String> imageURL) {
         this.title = title;
         this.userAuthId = userAuthId;
