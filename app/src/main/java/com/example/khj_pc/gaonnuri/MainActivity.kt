@@ -1,6 +1,7 @@
 package com.example.khj_pc.gaonnuri
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.util.Log
 import android.view.Menu
+import android.widget.Toast
 import com.example.khj_pc.gaonnuri.Adapter.RecyclerViewItemAdapter
 import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Data.UserResult
@@ -28,6 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         val TAG: String = MainActivity::class.java.simpleName
+        private val FINISH_INTERVAL_TIME: Long = 2000
+        private var backPressedTime: Long = 0
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,14 +74,6 @@ class MainActivity : AppCompatActivity() {
         testData.add("GGG")
     }
 
-    override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
-    }
-
     override fun onResume() {
         super.onResume()
         loadData()
@@ -116,5 +113,30 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            val tempTime = System.currentTimeMillis()
+            val intervalTime = tempTime - backPressedTime
+
+            if (intervalTime in 0..FINISH_INTERVAL_TIME) {
+                super.onBackPressed()
+                finish()
+            } else {
+                backPressedTime = tempTime
+                Toast.makeText(applicationContext, "뒤로 버튼을 한번더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+    override fun finish() {
+        super.finish()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            finishAffinity()
+        }
     }
 }

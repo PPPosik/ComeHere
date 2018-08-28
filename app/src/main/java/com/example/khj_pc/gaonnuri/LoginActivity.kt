@@ -13,12 +13,18 @@ import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.widget.Toast
+
+
 
 class LoginActivity : AppCompatActivity() {
     private var loginIntent: Intent? = null
 
     companion object {
         var TAG: String = LoginActivity::class.java.simpleName
+        private val FINISH_INTERVAL_TIME: Long = 2000
+        private var backPressedTime: Long = 0
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,6 +89,21 @@ class LoginActivity : AppCompatActivity() {
 
         })
     }
+
+    override fun onBackPressed() {
+        val tempTime = System.currentTimeMillis()
+        val intervalTime = tempTime - backPressedTime
+
+        if (intervalTime in 0..FINISH_INTERVAL_TIME) {
+            super.onBackPressed()
+            finish()
+        } else {
+            backPressedTime = tempTime
+            Toast.makeText(applicationContext, "뒤로 버튼을 한번더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
 
     override fun finish() {
         super.finish()

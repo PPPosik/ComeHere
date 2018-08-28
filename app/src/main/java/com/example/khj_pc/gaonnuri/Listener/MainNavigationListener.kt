@@ -18,6 +18,9 @@ public class MainNavigationListener(val context : Context, val drawer : DrawerLa
                 context.startActivity(intent)
             }
             R.id.main_menu_logout -> {
+                SharedPreferenceUtil.removePreferences(context, "username")
+                SharedPreferenceUtil.removePreferences(context, "token")
+                SharedPreferenceUtil.removePreferences(context, "name")
                 var intent: Intent = Intent(context, LoginActivity::class.java)
                 context.startActivity(intent)
             }
