@@ -15,6 +15,7 @@ import com.example.khj_pc.gaonnuri.Listener.MainNavigationListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.nav_header_main.view.*
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -43,7 +44,8 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(MainNavigationListener(this, drawer_layout))
-
+        nav_view.getHeaderView(0).name.text = SharedPreferenceUtil.getPreference(applicationContext, "name")!!
+        nav_view.getHeaderView(0).idText.text = SharedPreferenceUtil.getPreference(applicationContext, "username")
         loadData()
     }
 
