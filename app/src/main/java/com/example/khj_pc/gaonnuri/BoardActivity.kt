@@ -1,5 +1,6 @@
 package com.example.khj_pc.gaonnuri
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -12,6 +13,7 @@ import android.view.View
 
 import com.example.khj_pc.gaonnuri.Adapter.BoardRecyclerViewAdapter
 import com.example.khj_pc.gaonnuri.Data.Board
+import kotlinx.android.synthetic.main.activity_board.*
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.content_board.*
 import org.jetbrains.anko.toast
@@ -41,6 +43,7 @@ class BoardActivity : AppCompatActivity() {
         boards = ArrayList()
 
         loadData()
+        setLissteners()
     }
 
     fun setRecyclerView() {
@@ -53,6 +56,14 @@ class BoardActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         loadData()
+    }
+
+    fun setLissteners() {
+        floatingActionButton.setOnClickListener {
+            val intent: Intent = Intent(this, WriteActivity::class.java)
+            intent.putExtra("roomId", roomId)
+            startActivity(intent)
+        }
     }
 
     fun loadData() {

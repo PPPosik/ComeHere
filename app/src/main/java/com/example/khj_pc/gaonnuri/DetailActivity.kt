@@ -19,6 +19,7 @@ import com.example.khj_pc.gaonnuri.Listener.MainNavigationListener
 import kotlinx.android.synthetic.main.app_bar_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
 import kotlinx.android.synthetic.main.content_board.*
+import kotlinx.android.synthetic.main.nav_header_main.view.*
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -59,6 +60,9 @@ class DetailActivity : AppCompatActivity() {
         val navigationListener : DetailNavigationListener = DetailNavigationListener(this, detail_drawerLayout)
         navigationListener.id = this.id
         detail_nav_view.setNavigationItemSelectedListener(navigationListener)
+        detail_nav_view.getHeaderView(0).name.text = SharedPreferenceUtil.getPreference(applicationContext, "name")!!
+        detail_nav_view.getHeaderView(0).idText.text = SharedPreferenceUtil.getPreference(applicationContext, "username")
+
     }
 
     fun setBoardDummyData() {
