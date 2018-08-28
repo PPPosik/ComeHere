@@ -42,8 +42,6 @@ class MainActivity : AppCompatActivity() {
 
 //        var intent: Intent = Intent(this, SurveyCreateActivity::class.java)
 //        startActivity(intent)
-        var intent: Intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)

@@ -19,12 +19,8 @@
             android:title="게시판" />
         <item
             android:id="@+id/detail_menu_chat"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="채팅" />
-        <item
-            android:id="@+id/detail_menu_logout"
             android:icon="@drawable/ic_menu_manage"
-            android:title="로그아웃" />
+            android:title="채팅" />
         <item
             android:id="@+id/detail_menu_survey_make"
             android:icon="@drawable/ic_menu_gallery"
@@ -41,6 +37,10 @@
             android:id="@+id/detail_menu_result"
             android:icon="@drawable/ic_menu_manage"
             android:title="행사 자료 통계" />
+        <item
+            android:id="@+id/detail_menu_logout"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="로그아웃" />
 
     </group>
 

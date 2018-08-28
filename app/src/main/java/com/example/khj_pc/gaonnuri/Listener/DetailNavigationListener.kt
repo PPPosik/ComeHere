@@ -33,13 +33,6 @@ public class DetailNavigationListener(val context : Context, val drawer : Drawer
                 intent.putExtra("id", id)
                 context.startActivity(intent)
             }
-            R.id.detail_menu_logout -> {
-                SharedPreferenceUtil.removePreferences(context, "username")
-                SharedPreferenceUtil.removePreferences(context, "token")
-                SharedPreferenceUtil.removePreferences(context, "name")
-                var intent: Intent = Intent(context, LoginActivity::class.java)
-                context.startActivity(intent)
-            }
             R.id.detail_menu_survey_make -> {
                 var intent: Intent = Intent(context, SurveyCreateActivity::class.java)
                 context.startActivity(intent)
@@ -56,7 +49,13 @@ public class DetailNavigationListener(val context : Context, val drawer : Drawer
                 var intent: Intent = Intent(context, ChartActivity::class.java)
                 context.startActivity(intent)
             }
-
+            R.id.detail_menu_logout -> {
+                SharedPreferenceUtil.removePreferences(context, "username")
+                SharedPreferenceUtil.removePreferences(context, "token")
+                SharedPreferenceUtil.removePreferences(context, "name")
+                var intent: Intent = Intent(context, LoginActivity::class.java)
+                context.startActivity(intent)
+            }
         }
 
         drawer.closeDrawer(GravityCompat.START)
