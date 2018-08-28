@@ -38,6 +38,9 @@ interface PostService {
     @GET("post/get_all_post/{room_id}")
     fun getAllPostFromRoomId(@Path("room_id") roomId : String) : Call<ArrayList<Board>>
 
+    @GET("post/get_top_3/{room_id}")
+    fun getTopThree(@Path("room_id") roomId : String) : Call<ArrayList<Board>>
+
     @GET("post/add_like/{room_id}/{post_id}")
     fun addLike(@Path("room_id") roomId : String, @Path("post_id") postId : String) : Call<SingleBoardResult>
 }

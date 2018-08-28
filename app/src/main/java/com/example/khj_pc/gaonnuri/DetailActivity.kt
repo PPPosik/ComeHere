@@ -26,7 +26,7 @@ import retrofit2.Response
 
 class DetailActivity : AppCompatActivity() {
 
-    private val boards : ArrayList<Board> = ArrayList()
+    private var boards : ArrayList<Board> = ArrayList()
     private var imgUrl : ArrayList<String> = ArrayList()
 
     lateinit var id : String
@@ -47,6 +47,7 @@ class DetailActivity : AppCompatActivity() {
         setNavigationDrawer()
         setListeners()
         setBoardDummyData()
+        loadTopThree()
         loadData()
     }
 
@@ -69,11 +70,31 @@ class DetailActivity : AppCompatActivity() {
             for (i in 0..2)
                 b.content = b.content + "\n" + b.content
         }
+    }
 
-        val adapter = BoardRecyclerViewAdapter(this, boards)
-        board_recyclerview.adapter = adapter
-        board_recyclerview.layoutManager = LinearLayoutManager(this)
-        adapter.notifyDataSetChanged()
+    fun loadTopThree() {
+        var postService : PostService = RetrofitUtil.getLoginRetrofit(applicationContext).create(PostService::class.java)
+        var call : Call<ArrayList<Board>> = postService.getTopThree(id)
+        call.enqueue(object : Callback<ArrayList<Board>> {
+            override fun onFailure(call: Call<ArrayList<Board>>?, t: Throwable?) {
+                Log.e(TAG, t.toString())
+            }
+
+            override fun onResponse(call: Call<ArrayList<Board>>?, response: Response<ArrayList<Board>>?) {
+                if(response!!.body() != null) {
+                    when(response.code()) {
+                        200 -> {
+                            boards = response.body()!!
+                            setRecyclerView()
+                        }
+                        else -> {
+                            Log.e(TAG, "error code : ${response.code()}")
+                        }
+                    }
+                }
+            }
+
+        } )
     }
 
     fun setListeners() {
@@ -91,7 +112,13 @@ class DetailActivity : AppCompatActivity() {
         }
         detail_viewpager.adapter = DetailViewPageAdapter(imgUrl, this)
         detail_tablayout.setupWithViewPager(detail_viewpager, true)
+    }
 
+    fun setRecyclerView() {
+        val adapter = BoardRecyclerViewAdapter(this, boards)
+        board_recyclerview.adapter = adapter
+        board_recyclerview.layoutManager = LinearLayoutManager(this)
+        adapter.notifyDataSetChanged()
     }
 
     override fun onBackPressed() {
