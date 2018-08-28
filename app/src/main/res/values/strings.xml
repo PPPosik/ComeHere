@@ -105,4 +105,5 @@
     <string name="title_activity_chart">ChartActivity</string>
     <string name="title_activity_survey_create">SurveyCreateActivity</string>
     <string name="title_activity_survey_do">SurveyDoActivity</string>
+    <string name="title_activity_survey_chart">SurveyChartActivity</string>
 </resources>

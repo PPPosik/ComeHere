@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:content=".SurveyDoActivity"
-    tools:showIn="@layout/activity_survey_do">
+    tools:content=".SurveyChartActivity"
+    tools:showIn="@layout/activity_survey_chart">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -39,6 +39,7 @@
                         android:textColor="#ffffff"
                         android:textSize="32sp" />
                 </RelativeLayout>
+
 
                 <LinearLayout
                     android:id="@+id/survey_create_linear_layout"

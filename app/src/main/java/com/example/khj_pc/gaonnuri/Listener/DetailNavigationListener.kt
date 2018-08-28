@@ -42,8 +42,8 @@ public class DetailNavigationListener(val context : Context, val drawer : Drawer
                 context.startActivity(intent)
             }
             R.id.detail_menu_survey_result -> {
-//                var intent: Intent = Intent(context, Survey::class.java)
-//                context.startActivity(intent)
+                var intent: Intent = Intent(context, SurveyChartActivity::class.java)
+                context.startActivity(intent)
             }
             R.id.detail_menu_result -> {
                 var intent: Intent = Intent(context, ChartActivity::class.java)
