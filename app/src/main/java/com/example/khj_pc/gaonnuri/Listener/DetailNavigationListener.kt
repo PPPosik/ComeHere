@@ -9,7 +9,9 @@ import android.view.MenuItem
 import android.support.v4.widget.DrawerLayout
 import com.example.khj_pc.gaonnuri.*
 
-public class DetailNavigationListener(val context: Context, val drawer: DrawerLayout) : NavigationView.OnNavigationItemSelectedListener {
+
+public class DetailNavigationListener(val context : Context, val drawer : DrawerLayout) : NavigationView.OnNavigationItemSelectedListener{
+    var id : String = ""
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
@@ -23,10 +25,12 @@ public class DetailNavigationListener(val context: Context, val drawer: DrawerLa
             }
             R.id.detail_menu_board -> {
                 var intent: Intent = Intent(context, BoardActivity::class.java)
+                intent.putExtra("id", id)
                 context.startActivity(intent)
             }
             R.id.detail_menu_chat -> {
                 var intent: Intent = Intent(context, ChatActivity::class.java)
+                intent.putExtra("id", id)
                 context.startActivity(intent)
             }
             R.id.detail_menu_logout -> {

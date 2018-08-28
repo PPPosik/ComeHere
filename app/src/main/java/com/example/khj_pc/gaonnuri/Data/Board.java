@@ -28,13 +28,16 @@ public class Board implements Serializable {
 
     @SerializedName("created_at")
     private String date;
+    @SerializedName("like_cnt")
     private int likes;
     private int type;
 
     @SerializedName("images")
     private ArrayList<String> imageURL;
 
-    private ArrayList<Chat> chats;
+    private ArrayList<Chat> comments;
+
+    private int view_cnt;
 
 
     public Board(String roomId, String title, String author, String userAuthId, String content, int imageCount, String date, int likes, int type, ArrayList<String> imageURL) {
@@ -50,7 +53,20 @@ public class Board implements Serializable {
         this.imageURL = imageURL;
     }
 
-    public Board(String userAuthId, String author, String title, String content, int imageCount, ArrayList<String> imageURL) {
+    public Board(String title, String author, String content, int likes, int type) {
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.likes = likes;
+        this.type = type;
+        imageURL = new ArrayList<>();
+        imageURL.add("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg");
+        imageURL.add("https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg");
+        imageURL.add("https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg");
+        this.date = "June 2, 2017";
+    }
+
+    public Board(String userAuthId , String author, String title, String content, int imageCount,  ArrayList<String> imageURL) {
         this.title = title;
         this.userAuthId = userAuthId;
         this.author = author;
@@ -71,7 +87,7 @@ public class Board implements Serializable {
         this.imageURL = imageURL;
     }
 
-    public Board(String id, String roomId, String title, String author, String userAuthId, String content, int imageCount, String date, int likes, int type, ArrayList<String> imageURL, ArrayList<Chat> chats) {
+    public Board(String id, String roomId, String title, String author, String userAuthId, String content, int imageCount, String date, int likes, int type, ArrayList<String> imageURL, ArrayList<Chat> comments) {
         this.id = id;
         this.roomId = roomId;
         this.title = title;
@@ -83,7 +99,7 @@ public class Board implements Serializable {
         this.likes = likes;
         this.type = type;
         this.imageURL = imageURL;
-        this.chats = chats;
+        this.comments = comments;
     }
 
     public String getTitle() {
@@ -174,11 +190,19 @@ public class Board implements Serializable {
         this.imageCount = imageCount;
     }
 
-    public ArrayList<Chat> getChats() {
-        return chats;
+    public ArrayList<Chat> getComments() {
+        return comments;
     }
 
-    public void setChats(ArrayList<Chat> chats) {
-        this.chats = chats;
+    public void setComments(ArrayList<Chat> comments) {
+        this.comments = comments;
+    }
+
+    public int getView_cnt() {
+        return view_cnt;
+    }
+
+    public void setView_cnt(int view_cnt) {
+        this.view_cnt = view_cnt;
     }
 }
