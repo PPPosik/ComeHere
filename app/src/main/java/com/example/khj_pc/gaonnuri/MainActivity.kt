@@ -1,5 +1,6 @@
 package com.example.khj_pc.gaonnuri
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -22,15 +23,19 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     val testData: ArrayList<String> = ArrayList()
-    lateinit var dataList : List<Room>
+    lateinit var dataList: List<Room>
 
     companion object {
-        val TAG : String = MainActivity::class.java.simpleName
+        val TAG: String = MainActivity::class.java.simpleName
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        var intent: Intent = Intent(this, ChartActivity::class.java)
+        startActivity(intent)
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -82,10 +87,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loadData() {
-        val userName : String? = SharedPreferenceUtil.getPreference(applicationContext, "username")
+        val userName: String? = SharedPreferenceUtil.getPreference(applicationContext, "username")
         Log.d("asdf", userName)
-        val userService : UserService = RetrofitUtil.getLoginRetrofit(applicationContext).create(UserService::class.java)
-        val call : Call<UserResult> = userService.getUserInfo(userName!!)
+        val userService: UserService = RetrofitUtil.getLoginRetrofit(applicationContext).create(UserService::class.java)
+        val call: Call<UserResult> = userService.getUserInfo(userName!!)
         call.enqueue(object : Callback<UserResult> {
             override fun onFailure(call: Call<UserResult>?, t: Throwable?) {
                 Log.e(TAG, t.toString())
@@ -93,8 +98,8 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<UserResult>?, response: Response<UserResult>?) {
                 Log.e("test", response!!.code().toString())
-                if(response != null && response.isSuccessful) {
-                    when(response.code()) {
+                if (response != null && response.isSuccessful) {
+                    when (response.code()) {
                         200 -> {
                             toast("성공적으로 데이터가 로딩되었습니다.")
                             dataList = response.body()!!.room_string

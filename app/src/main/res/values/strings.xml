@@ -101,4 +101,6 @@
     <string name="title_activity_board_detail">BoardDetailActivity</string>
     <string name="title_activity_board_comment">BoardCommentActivity</string>
     <string name="title_activity_comment">CommentActivity</string>
+    <string name="title_activity_write">WriteActivity</string>
+    <string name="title_activity_chart">ChartActivity</string>
 </resources>

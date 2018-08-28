@@ -56,7 +56,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CommentActivity"
-            android:label="@string/title_activity_comment"></activity>
+            android:label="@string/title_activity_comment" />
+        <activity
+            android:name=".WriteActivity"
+            android:label="@string/title_activity_write" />
+        <activity
+            android:name=".ChartActivity"
+            android:label="@string/title_activity_chart"></activity>
     </application>
 
 </manifest>

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerViewAdapter.ChatRecyclerViewViewHolder> {
 
+
     private Context context;
     private ArrayList<Chat> chats;
 
@@ -28,7 +29,7 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
     @Override
     public ChatRecyclerViewAdapter.ChatRecyclerViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat, parent, false);
-        return new ChatRecyclerViewViewHolder(itemView);
+        return new ChatRecyclerViewAdapter.ChatRecyclerViewViewHolder(itemView);
     }
 
     @Override
@@ -61,5 +62,6 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
         }
 
     }
+
 
 }
