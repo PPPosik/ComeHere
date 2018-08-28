@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         facebook_button.setOnClickListener {
-            toast(facebook_button.text)
+            toast("아직 개발중")
         }
     }
 

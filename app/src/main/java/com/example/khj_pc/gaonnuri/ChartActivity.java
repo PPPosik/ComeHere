@@ -51,9 +51,9 @@ public class ChartActivity extends Activity {
             }
         });
         datas = new ArrayList<>();
-        datas.add(new CircleChart("음료수", "어떤 미친놈이 해커톤하는데 솔의 눈을 가져다 놓냐 시팔", 76));
-        datas.add(new CircleChart("음료수", "어떤 미친놈이 해커톤하는데 솔의 눈을 가져다 놓냐 시팔", 76));
-        datas.add(new CircleChart("음료수", "어떤 미친놈이 해커톤하는데 솔의 눈을 가져다 놓냐 시팔", 76));
+        datas.add(new CircleChart("음료수", "솔의 눈 싫어요", 76));
+        datas.add(new CircleChart("음료수", "솔의 눈 싫어요", 76));
+        datas.add(new CircleChart("음료수", "솔의 눈 싫어요", 76));
 
         adapter = new ChartRecyclerViewAdapter(this, datas);
         recyclerView.setAdapter(adapter);

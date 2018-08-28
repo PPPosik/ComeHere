@@ -52,7 +52,7 @@
                     android:layout_marginTop="15dp"
                     android:gravity="center_horizontal"
                     android:lineSpacingExtra="10sp"
-                    android:text="자유롭게 게시판에 쓰고싶은 내용이 있으면 쓰던가 뭐 팍씨"
+                    android:text="자유롭게 게시판에 쓰고싶은 내용이 있으면 써주세요"
                     android:textColor="#ffffff"
                     android:textSize="14sp" />
 
