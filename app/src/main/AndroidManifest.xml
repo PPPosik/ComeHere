@@ -68,7 +68,10 @@
             android:label="@string/title_activity_survey_create" />
         <activity
             android:name=".SurveyDoActivity"
-            android:label="@string/title_activity_survey_do"></activity>
+            android:label="@string/title_activity_survey_do" />
+        <activity
+            android:name=".SurveyChartActivity"
+            android:label="@string/title_activity_survey_chart"></activity>
     </application>
 
 </manifest>

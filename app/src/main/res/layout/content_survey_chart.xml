@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:content=".SurveyDoActivity"
-    tools:showIn="@layout/activity_survey_do">
+    tools:content=".SurveyChartActivity"
+    tools:showIn="@layout/activity_survey_chart">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -40,11 +40,42 @@
                         android:textSize="32sp" />
                 </RelativeLayout>
 
+
+                <EditText
+                    android:id="@+id/survey_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginRight="28dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/transparent"
+                    android:hint="3. 본인의 이름은?(ex 홍길동)"
+                    android:lineSpacingExtra="3sp"
+                    android:textColor="#172434"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
-                    android:id="@+id/survey_create_linear_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="22dp"
+                    android:background="@drawable/background_rectangle_light_black_white_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:hint="그렇다"
+                        android:lineSpacingExtra="15sp"
+                        android:textColor="#172434"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
 
                 </LinearLayout>
             </LinearLayout>
