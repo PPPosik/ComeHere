@@ -1,6 +1,7 @@
 package com.example.khj_pc.gaonnuri
 
 import com.example.khj_pc.gaonnuri.Data.*
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -47,7 +48,10 @@ interface PostService {
     @GET("post/get_post/{room_id}/{post_id}")
     fun getOne(@Path("room_id") roomId : String, @Path("post_id") postId : String) : Call<Board>
 
-
     @POST("post/add_comment")
     fun addComment(@Body comment : Chat) : Call<Board>
+
+    @Multipart
+    @POST("post/create")
+    fun createPost(@Part("data") board: Board, @Part images : ArrayList<MultipartBody.Part>) : Call<Result>
 }

@@ -34,6 +34,9 @@ public class DetailNavigationListener(val context : Context, val drawer : Drawer
                 context.startActivity(intent)
             }
             R.id.detail_menu_logout -> {
+                SharedPreferenceUtil.removePreferences(context, "username")
+                SharedPreferenceUtil.removePreferences(context, "token")
+                SharedPreferenceUtil.removePreferences(context, "name")
                 var intent: Intent = Intent(context, LoginActivity::class.java)
                 context.startActivity(intent)
             }
@@ -42,8 +45,8 @@ public class DetailNavigationListener(val context : Context, val drawer : Drawer
                 context.startActivity(intent)
             }
             R.id.detail_menu_survey_join -> {
-//                var intent: Intent = Intent(context, Survey::class.java)
-//                context.startActivity(intent)
+                var intent: Intent = Intent(context, SurveyDoActivity::class.java)
+                context.startActivity(intent)
             }
             R.id.detail_menu_survey_result -> {
 //                var intent: Intent = Intent(context, Survey::class.java)

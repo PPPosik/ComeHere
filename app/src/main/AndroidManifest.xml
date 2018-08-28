@@ -3,6 +3,7 @@
     package="com.example.khj_pc.gaonnuri">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -65,7 +66,10 @@
             android:label="@string/title_activity_chart" />
         <activity
             android:name=".SurveyCreateActivity"
-            android:label="@string/title_activity_survey_create"></activity>
+            android:label="@string/title_activity_survey_create" />
+        <activity
+            android:name=".SurveyDoActivity"
+            android:label="@string/title_activity_survey_do"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ public class Board implements Serializable {
     @SerializedName("context")
     private String content;
 
-    @SerializedName("image_count")
+    @SerializedName("images_cnt")
     private int imageCount;
 
     @SerializedName("created_at")
@@ -85,6 +85,15 @@ public class Board implements Serializable {
         this.likes = likes;
         this.type = type;
         this.imageURL = imageURL;
+    }
+
+    public Board(String roomId, String userAuthId, String author,  String title, String context, int imageCount) {
+        this.roomId = roomId;
+        this.userAuthId = userAuthId;
+        this.author = author;
+        this.title = title;
+        this.content = context;
+        this.imageCount = imageCount;
     }
 
     public Board(String id, String roomId, String title, String author, String userAuthId, String content, int imageCount, String date, int likes, int type, ArrayList<String> imageURL, ArrayList<Chat> comments) {

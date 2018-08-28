@@ -21,6 +21,8 @@ public class Survey {
     public static class SurveyMultiple extends Survey {
 
         private String content[] = new String[4];
+        private boolean selected[] = new boolean[]{false, false, false, false};
+
 
         public SurveyMultiple() {
         }
@@ -40,6 +42,14 @@ public class Survey {
 
         public void setContent(String[] content) {
             this.content = content;
+        }
+
+        public boolean[] getSelected() {
+            return selected;
+        }
+
+        public void setSelected(boolean[] selected) {
+            this.selected = selected;
         }
     }
 
