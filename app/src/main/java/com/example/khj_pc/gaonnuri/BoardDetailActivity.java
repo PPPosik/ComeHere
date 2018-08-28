@@ -46,6 +46,8 @@ public class BoardDetailActivity extends AppCompatActivity {
         final Intent intent = getIntent();
         board = (Board) intent.getSerializableExtra("board");
 
+
+
         if (board == null) {
             Toast.makeText(this, "정보를 가져오는데 오류발생", Toast.LENGTH_SHORT).show();
             finish();
@@ -62,6 +64,9 @@ public class BoardDetailActivity extends AppCompatActivity {
         text1 = findViewById(R.id.board_detail_text1);
         text2 = findViewById(R.id.board_detail_text2);
         time = findViewById(R.id.board_detail_time);
+
+        loadData();
+
         findViewById(R.id.board_detail_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,9 +82,7 @@ public class BoardDetailActivity extends AppCompatActivity {
             }
         });
 
-        title.setText(board.getTitle());
-        text1.setText(board.getContent());
-        time.setText(board.getDate());
+
     }
 
     public void addLikes(View view) {
@@ -107,6 +110,42 @@ public class BoardDetailActivity extends AppCompatActivity {
             public void onFailure(Call<SingleBoardResult> call, Throwable t) {
                 Log.e(TAG, t.toString());
             }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadData();
+    }
+
+    private void loadData() {
+        PostService postService = RetrofitUtil.INSTANCE.getLoginRetrofit(getApplicationContext()).create(PostService.class);
+        Call<Board> call = postService.getOne(board.getRoomId(), board.getId());
+        call.enqueue(new Callback<Board>() {
+            @Override
+            public void onResponse(Call<Board> call, Response<Board> response) {
+                Log.e("code", Integer.toString(response.code()));
+                if(response.body() != null) {
+                    switch(response.code()) {
+                        case 200:
+                            board = response.body();
+                            title.setText(board.getTitle());
+                            text1.setText(board.getContent());
+                            time.setText(board.getDate());
+                            break;
+                        default:
+                                Log.e(TAG, Integer.toString(response.code()));
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Board> call, Throwable t) {
+                Log.e(TAG, t.toString());
+            }
+
         });
     }
 }

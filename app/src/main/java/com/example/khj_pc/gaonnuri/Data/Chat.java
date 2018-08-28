@@ -2,7 +2,13 @@ package com.example.khj_pc.gaonnuri.Data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Chat {
+import java.io.Serializable;
+
+public class Chat implements Serializable{
+    @SerializedName("room_ObjId")
+    private String roomId;
+    @SerializedName("post_ObjId")
+    private String postId;
     @SerializedName("author")
     private String userName;
     @SerializedName("message")
@@ -38,5 +44,21 @@ public class Chat {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
+    public String getPostId() {
+        return postId;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 }

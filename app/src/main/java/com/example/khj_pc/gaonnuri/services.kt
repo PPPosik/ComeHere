@@ -43,4 +43,11 @@ interface PostService {
 
     @GET("post/add_like/{room_id}/{post_id}")
     fun addLike(@Path("room_id") roomId : String, @Path("post_id") postId : String) : Call<SingleBoardResult>
+
+    @GET("post/get_post/{room_id}/{post_id}")
+    fun getOne(@Path("room_id") roomId : String, @Path("post_id") postId : String) : Call<Board>
+
+
+    @POST("post/add_comment")
+    fun addComment(@Body comment : Chat) : Call<Board>
 }

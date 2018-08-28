@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.item_chat.view.*
 
 import java.util.ArrayList
 
-class ChatRecyclerViewAdapter(private val context: Context, private val chats: ArrayList<Chat>) : RecyclerView.Adapter<ChatRecyclerViewAdapter.ChatRecyclerViewViewHolder>() {
+class ChatRecyclerViewAdapter(private val context: Context, var chats: ArrayList<Chat>) : RecyclerView.Adapter<ChatRecyclerViewAdapter.ChatRecyclerViewViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatRecyclerViewAdapter.ChatRecyclerViewViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_chat, parent, false)
