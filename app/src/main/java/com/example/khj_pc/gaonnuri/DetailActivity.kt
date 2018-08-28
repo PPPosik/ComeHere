@@ -49,6 +49,7 @@ class DetailActivity : AppCompatActivity() {
         setBoardDummyData()
         loadTopThree()
         loadData()
+
     }
 
     fun setNavigationDrawer() {
@@ -148,7 +149,15 @@ class DetailActivity : AppCompatActivity() {
                         200 -> {
                             room = response.body()!!
                             imgUrl = ArrayList(room.images)
+
+                            if(room.questionName.length > 7){
+                                questName.textSize = 16f
+                            }
+                            else{
+                                questName.textSize = 32f
+                            }
                             questName.text = room.questionName
+
                             setDetailViewPager()
                         }
 
