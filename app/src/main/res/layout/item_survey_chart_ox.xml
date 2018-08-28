@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/survey_title_text"
+        android:id="@+id/survey_title_ox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -14,32 +14,21 @@
         android:layout_marginRight="28dp"
         android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
-        android:hint="3. 본인의 이름은?(ex 홍길동)"
+        android:hint="2. 다시 행사를 개최한다면 주말이었으면 좋겠다."
         android:lineSpacingExtra="3sp"
         android:textColor="#172434"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/survey_content_ox_chart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="22dp"
         android:layout_marginRight="22dp"
         android:background="@drawable/background_rectangle_light_black_white_content"
         android:gravity="center"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:hint="그렇다"
-            android:lineSpacingExtra="15sp"
-            android:textColor="#172434"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+        android:orientation="vertical">
 
 
     </LinearLayout>
