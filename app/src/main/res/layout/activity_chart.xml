@@ -27,6 +27,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_chart" />
+    <include layout="@layout/content_survey_create" />
 
 </android.support.design.widget.CoordinatorLayout>

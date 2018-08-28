@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:hint="1. 식사중 가장 마음에 안들었던 식사는?"
+        android:lineSpacingExtra="3sp"
+        android:textColor="#172434"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
+        android:background="@drawable/background_rectangle_light_black_white_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/survey_multiple_content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:hint="1. 아침"
+            android:lineSpacingExtra="3sp"
+            android:textColor="#172434"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/survey_multiple_content2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:hint="1. 아침"
+            android:lineSpacingExtra="3sp"
+            android:textColor="#172434"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/survey_multiple_content3"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:hint="1. 아침"
+            android:lineSpacingExtra="3sp"
+            android:textColor="#172434"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/survey_multiple_content4"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:hint="1. 아침"
+            android:lineSpacingExtra="3sp"
+            android:textColor="#172434"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

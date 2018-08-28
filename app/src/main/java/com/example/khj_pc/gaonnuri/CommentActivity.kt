@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.khj_pc.gaonnuri.Adapter.ChatRecyclerViewAdapter
 import com.example.khj_pc.gaonnuri.Data.Board
 import com.example.khj_pc.gaonnuri.Data.Chat
+import kotlinx.android.synthetic.main.activity_comment.*
 import kotlinx.android.synthetic.main.content_comment.*
 import org.w3c.dom.Comment
 import retrofit2.Call
@@ -46,6 +47,10 @@ class CommentActivity : Activity() {
         comments = board!!.comments
         setListeners()
         setRecyclerView()
+
+        comment_back.setOnClickListener {
+            finish()
+        }
     }
 
     fun setRecyclerView() {

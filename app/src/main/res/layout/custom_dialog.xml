@@ -16,7 +16,7 @@
         android:layout_marginLeft="46dp"
         android:layout_marginRight="46dp"
         android:layout_gravity="center"
-        android:text="본 행사는 결제를 해야하는 행사입니다. 결제를 진행하시겠습니까?" />
+        android:text="본 행사에 참여하시겠습니까?" />
 
     <LinearLayout
         android:layout_width="wrap_content"
