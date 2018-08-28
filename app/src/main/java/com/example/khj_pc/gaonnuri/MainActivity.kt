@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        var intent: Intent = Intent(this, SurveyCreateActivity::class.java)
+        var intent: Intent = Intent(this, SurveyDoActivity::class.java)
         startActivity(intent)
 
         val toggle = ActionBarDrawerToggle(
