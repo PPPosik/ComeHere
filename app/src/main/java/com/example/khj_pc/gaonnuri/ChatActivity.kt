@@ -19,6 +19,7 @@ import com.google.gson.reflect.TypeToken
 import io.socket.client.IO
 import io.socket.client.Socket
 import io.socket.emitter.Emitter
+import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.content_chat.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -54,6 +55,10 @@ class ChatActivity : AppCompatActivity() {
 
         setSocket()
         setListeners()
+
+        chat_back.setOnClickListener {
+            finish()
+        }
     }
 
     fun setRecyclerView() {

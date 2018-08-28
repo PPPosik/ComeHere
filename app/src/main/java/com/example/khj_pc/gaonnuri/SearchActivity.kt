@@ -38,6 +38,9 @@ class SearchActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         rooms = ArrayList()
 
+        search_back.setOnClickListener {
+            finish()
+        }
 
         loadData()
 
