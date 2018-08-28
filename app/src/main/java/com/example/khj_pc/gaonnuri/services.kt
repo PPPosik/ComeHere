@@ -55,3 +55,8 @@ interface PostService {
     @POST("post/create")
     fun createPost(@Part("data") board: Board, @Part images : ArrayList<MultipartBody.Part>) : Call<Result>
 }
+
+interface MachineLearningService {
+    @POST("/ml")
+    fun getMLData(@Body roomId : RoomID) : Call<MLData>
+}

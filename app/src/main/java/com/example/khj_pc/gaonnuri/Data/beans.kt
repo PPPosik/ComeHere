@@ -42,3 +42,11 @@ data class SingleRoomResult(val _id : String,
                             val images : List<String>,
                             val message : String)
 data class SingleBoardResult(val message : String, val status : Int, val data : Board)
+
+data class RoomID(val objId : String)
+
+data class MLData(val status : String ,val keyword : ArrayList<Keyword>, val topic_result : TopicResult)
+
+data class Keyword(val key : String, val value : Int)
+
+data class TopicResult(val total : Int, val common : Int, val bathroom : Int, val enter : Int, val lost : Int)
