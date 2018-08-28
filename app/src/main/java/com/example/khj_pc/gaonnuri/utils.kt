@@ -32,6 +32,11 @@ object RetrofitUtil {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
+    val mlRetrofit : Retrofit = Retrofit.Builder()
+            .baseUrl("http://52.79.106.90:5050")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
     val MULTIPART_FORM_DATA = "multipart/form-data"
 
     fun getLoginRetrofit(context: Context): Retrofit {
