@@ -36,7 +36,7 @@
             android:paddingTop="29.4dp"
             android:paddingLeft="16dp"
             android:paddingBottom="1.6dp"
-            android:text= "세미나 ; 카테고리"
+            android:text= "콘서트 ; 카테고리"
             android:textColor="#172434"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
 

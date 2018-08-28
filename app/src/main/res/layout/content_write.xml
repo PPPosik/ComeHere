@@ -41,6 +41,7 @@
                 </RelativeLayout>
 
                 <EditText
+                    android:id="@+id/titleEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
@@ -53,7 +54,9 @@
                     android:textColor="#182535"
                     android:textSize="40sp" />
 
-                <TextView
+                <EditText
+                    android:gravity="top"
+                    android:id="@+id/contextEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="51dp"
@@ -70,23 +73,17 @@
                     android:layout_marginBottom="20dp">
 
                     <LinearLayout
-                        android:id="@+id/aaaa"
-
+                        android:id="@+id/linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <include layout="@layout/item_write_image" />
-
-                        <include layout="@layout/item_write_image" />
-
-                        <include layout="@layout/item_write_image" />
-
-                        <include layout="@layout/item_write_image" />
                     </LinearLayout>
                 </HorizontalScrollView>
 
                 <TextView
+                    android:id="@+id/sendButton"
+                    android:clickable="true"
                     android:layout_width="148dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center_horizontal"
@@ -96,7 +93,8 @@
                     android:lineSpacingExtra="18sp"
                     android:text="작성완료"
                     android:textColor="#172434"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:focusable="true" />
 
             </LinearLayout>
         </ScrollView>

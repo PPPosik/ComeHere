@@ -1,9 +1,11 @@
 package com.example.khj_pc.gaonnuri
 
 import android.content.Context
+import android.net.Uri
 import android.widget.ImageButton
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 import java.io.File
 
@@ -60,6 +62,10 @@ object RetrofitUtil {
     fun createRequestBody(value: String): RequestBody {
         return RequestBody.create(MediaType.parse(MULTIPART_FORM_DATA), value)
     }
+}
+
+fun ImageView.loadImage(url : Uri, context: Context){//수정 할 때
+    Glide.with(context).load(url).apply(RequestOptions().centerCrop()).into(this)
 }
 
 fun ImageView.loadUrl(url : String) {

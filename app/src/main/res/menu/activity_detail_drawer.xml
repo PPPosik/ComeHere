@@ -25,6 +25,22 @@
             android:id="@+id/detail_menu_logout"
             android:icon="@drawable/ic_menu_manage"
             android:title="로그아웃" />
+        <item
+            android:id="@+id/detail_menu_survey_make"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="설문조사 생성" />
+        <item
+            android:id="@+id/detail_menu_survey_join"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="설문조사 참여" />
+        <item
+            android:id="@+id/detail_menu_survey_result"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="설문조사 결과" />
+        <item
+            android:id="@+id/detail_menu_result"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="행사 자료 통계" />
 
     </group>
 
