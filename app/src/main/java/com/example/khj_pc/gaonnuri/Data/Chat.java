@@ -1,13 +1,13 @@
 package com.example.khj_pc.gaonnuri.Data;
 
-import java.io.Serializable;
+import com.google.gson.annotations.SerializedName;
 
-public class Chat implements Serializable {
-
+public class Chat {
+    @SerializedName("author")
     private String userName;
-
+    @SerializedName("message")
     private String content;
-
+    @SerializedName("created_at")
     private String time;
 
     public Chat(String userName, String time, String context) {

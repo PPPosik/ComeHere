@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class CommentActivity extends Activity {
 
     private Board board;
-    private ArrayList<Chat> chats;
+    private ArrayList<Chat> comments;
     private RecyclerView recyclerView;
 
     @Override
@@ -32,14 +32,14 @@ public class CommentActivity extends Activity {
             Toast.makeText(this, "문제발생", Toast.LENGTH_SHORT).show();
             return;
         }
-        board.setChats(new ArrayList<Chat>());
+        board.setComments(new ArrayList<Chat>());
         recyclerView = findViewById(R.id.comment_recyclerview);
-        chats = board.getChats();
-        chats.add(new Chat("장원준(운영자)", "2h ago", "참가자 여러분들께서 피드에 자유롭게 질문을 남기셔도 됩니다."));
-        chats.add(new Chat("배현빈", "2h ago", "네 알겠습니다."));
-        chats.add(new Chat("익명", "2h ago", "7시부터는"));
+        comments = board.getComments();
+        comments.add(new Chat("장원준(운영자)", "2h ago", "참가자 여러분들께서 피드에 자유롭게 질문을 남기셔도 됩니다."));
+        comments.add(new Chat("배현빈", "2h ago", "네 알겠습니다."));
+        comments.add(new Chat("익명", "2h ago", "7시부터는"));
 
-        ChatRecyclerViewAdapter adapter = new ChatRecyclerViewAdapter(this, chats);
+        ChatRecyclerViewAdapter adapter = new ChatRecyclerViewAdapter(this, comments);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter.notifyDataSetChanged();

@@ -5,7 +5,7 @@ import java.io.Serializable
 
 data class Result(val message : String)
 
-data class LoginResult(val id : String, val token : String, val message : String)
+data class LoginResult(val id : String, val token : String, val message : String, val user : User)
 
 data class LoginUser(val id : String, val password : String)
 
@@ -29,4 +29,15 @@ data class Room(val _id : String,
 
 data class RoomResult(val message : String, val results : List<Room>)
 
-data class SingleRoomResult(val message : String, val result : Room)
+data class SingleRoomResult(val _id : String,
+                            @SerializedName("quest_name") val questionName : String,
+                            @SerializedName("request_person_id") val requestPersonId : String,
+                            val title : String,
+                            val context : String,
+                            val location : String,
+                            @SerializedName("people_num_max") val peopleNumMax : Int,
+                            @SerializedName("people_num") val peopleNum : Int,
+                            val users : List<String>,
+                            val images : List<String>,
+                            val message : String)
+data class SingleBoardResult(val message : String, val status : Int, val data : Board)
