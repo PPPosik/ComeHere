@@ -136,7 +136,7 @@ class SurveyCreateActivity : Activity() {
                     viewmodels[i].cell.writeString = ""
                 }
                 2 -> {
-                    viewmodels[i].cell.title = viewmodels[i].view.survey_title_text.toString()
+                    viewmodels[i].cell.title = viewmodels[i].view.survey_title_text.text.toString()
                     viewmodels[i].cell.writeString = ""
                 }
             }
