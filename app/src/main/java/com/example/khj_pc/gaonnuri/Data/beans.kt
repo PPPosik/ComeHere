@@ -1,5 +1,6 @@
 package com.example.khj_pc.gaonnuri.Data
 
+import android.view.View
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -50,3 +51,23 @@ data class MLData(val status : String ,val keyword : ArrayList<Keyword>, val top
 data class Keyword(val key : String, val value : Int)
 
 data class TopicResult(val total : Int, val common : Int, val bathroom : Int, val enter : Int, val lost : Int)
+
+data class SurveyViewModel(val view  : View, val cell : SurveyCell)
+
+data class SurveyCell(var type : Int, var title : String, val body : ArrayList<SurveyBody>, @SerializedName("write_string") var writeString : String)
+
+data class SurveyResultCell(var type : Int, var title : String, val body : ArrayList<SurveyBody>, @SerializedName("write_string") var writeString : ArrayList<String>)
+
+data class SurveyBody(val context : String, val check : Int)
+
+data class SurveyData(@SerializedName("room_id") val roomId : String,
+                      @SerializedName("survey_form") val surveyForm : ArrayList<SurveyCell>)
+
+data class SurveyResultData(@SerializedName("room_id") val roomId : String,
+                      @SerializedName("survey_form") val surveyForm : ArrayList<SurveyResultCell>)
+
+data class SurveyResponseData(@SerializedName("room_id") val roomId : String,
+                          @SerializedName("survey_form") val surveyForm : ArrayList<SurveyCell>,
+                              @SerializedName("data") val survey : ArrayList<SurveyResultCell>)
+
+data class SurveyResponse(val message : String, val data : SurveyResponseData)

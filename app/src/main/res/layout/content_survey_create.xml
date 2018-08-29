@@ -51,6 +51,15 @@
             </LinearLayout>
         </ScrollView>
 
+        <Button
+            android:id="@+id/finishButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="작성완료"
+            android:layout_alignTop="@+id/survey_create_add"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center" />
+
         <ImageView
             android:id="@+id/survey_create_add"
             android:layout_width="50dp"

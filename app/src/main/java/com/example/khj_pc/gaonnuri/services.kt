@@ -60,3 +60,8 @@ interface MachineLearningService {
     @POST("/ml")
     fun getMLData(@Body roomId : RoomID) : Call<MLData>
 }
+
+interface SurveyService {
+    @POST("survey/create")
+    fun createSurvey(@Body surveyData : SurveyData) : Call<SurveyResponse>
+}
