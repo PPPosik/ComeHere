@@ -8,6 +8,8 @@ import android.support.v4.view.GravityCompat
 import android.view.MenuItem
 import android.support.v4.widget.DrawerLayout
 import com.example.khj_pc.gaonnuri.*
+import com.example.khj_pc.gaonnuri.Activity.*
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 
 
 public class DetailNavigationListener(val context : Context, val drawer : DrawerLayout) : NavigationView.OnNavigationItemSelectedListener{

@@ -1,6 +1,5 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.app.Activity
 import android.support.v7.widget.LinearLayoutManager
@@ -11,9 +10,12 @@ import android.widget.Toast
 import com.example.khj_pc.gaonnuri.Adapter.ChatRecyclerViewAdapter
 import com.example.khj_pc.gaonnuri.Data.Board
 import com.example.khj_pc.gaonnuri.Data.Chat
+import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Service.PostService
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 import kotlinx.android.synthetic.main.activity_comment.*
 import kotlinx.android.synthetic.main.content_comment.*
-import org.w3c.dom.Comment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

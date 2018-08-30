@@ -1,12 +1,10 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
-import android.content.res.Resources
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.ViewGroup
 import com.example.khj_pc.gaonnuri.Adapter.ViewPageAdapter
 import com.example.khj_pc.gaonnuri.Data.Room
-import com.example.khj_pc.gaonnuri.Dialog.CustomDialog
+import com.example.khj_pc.gaonnuri.R
 import kotlinx.android.synthetic.main.activity_dialog.*
 
 public class DialogActivity: AppCompatActivity(){

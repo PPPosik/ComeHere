@@ -1,4 +1,4 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,9 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import com.example.khj_pc.gaonnuri.Data.Result
 import com.example.khj_pc.gaonnuri.Data.User
+import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Service.UserService
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.toast

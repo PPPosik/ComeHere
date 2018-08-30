@@ -2,14 +2,13 @@ package com.example.khj_pc.gaonnuri.Dialog
 
 import android.content.Context
 import android.app.Dialog
-import android.graphics.drawable.ColorDrawable
 import android.util.Log
 import android.view.Window
 import android.widget.Toast
 import com.example.khj_pc.gaonnuri.Data.Result
 import com.example.khj_pc.gaonnuri.R
 import com.example.khj_pc.gaonnuri.RetrofitUtil
-import com.example.khj_pc.gaonnuri.RoomService
+import com.example.khj_pc.gaonnuri.Service.RoomService
 import com.example.khj_pc.gaonnuri.SharedPreferenceUtil
 import kotlinx.android.synthetic.main.custom_dialog.*
 import retrofit2.Call

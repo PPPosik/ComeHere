@@ -1,28 +1,24 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.View
 
 import com.example.khj_pc.gaonnuri.Adapter.ChatRecyclerViewAdapter
 import com.example.khj_pc.gaonnuri.Data.Chat
+import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 import com.google.gson.Gson
-import com.google.gson.JsonObject
-import com.google.gson.reflect.TypeToken
 import io.socket.client.IO
 import io.socket.client.Socket
 import io.socket.emitter.Emitter
 import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.content_chat.*
 import org.json.JSONArray
-import org.json.JSONException
 
 import org.json.JSONObject
 import java.text.SimpleDateFormat

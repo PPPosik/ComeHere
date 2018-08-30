@@ -1,4 +1,4 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import com.example.khj_pc.gaonnuri.Data.*
+import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Service.SurveyService
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
 import kotlinx.android.synthetic.main.content_survey_create.*
 import kotlinx.android.synthetic.main.item_survey_multiple.view.*
 import kotlinx.android.synthetic.main.item_survey_ox.view.*

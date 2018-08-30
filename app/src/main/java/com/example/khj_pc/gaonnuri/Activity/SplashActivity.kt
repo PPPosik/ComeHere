@@ -1,8 +1,9 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import com.example.khj_pc.gaonnuri.R
 
 class SplashActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {

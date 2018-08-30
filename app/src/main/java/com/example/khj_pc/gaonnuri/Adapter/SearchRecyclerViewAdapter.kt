@@ -1,24 +1,18 @@
 package com.example.khj_pc.gaonnuri.Adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 
-import com.example.khj_pc.gaonnuri.Data.Contest
 import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.R
-import kotlinx.android.synthetic.main.content_search.view.*
 import kotlinx.android.synthetic.main.item_search.view.*
 
-import android.R.attr.name
 import android.content.Intent
-import android.text.method.TextKeyListener.clear
 import android.util.Log
-import com.example.khj_pc.gaonnuri.DialogActivity
+import com.example.khj_pc.gaonnuri.Activity.DialogActivity
 import java.util.*
 import kotlin.collections.ArrayList
 

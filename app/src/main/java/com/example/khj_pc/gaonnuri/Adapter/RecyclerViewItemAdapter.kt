@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.khj_pc.gaonnuri.Data.Room
-import com.example.khj_pc.gaonnuri.DetailActivity
-import com.example.khj_pc.gaonnuri.MainActivity
+import com.example.khj_pc.gaonnuri.Activity.DetailActivity
 import com.example.khj_pc.gaonnuri.R
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 import org.jetbrains.anko.toast

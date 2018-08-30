@@ -1,4 +1,4 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Service
 
 import com.example.khj_pc.gaonnuri.Data.*
 import okhttp3.MultipartBody

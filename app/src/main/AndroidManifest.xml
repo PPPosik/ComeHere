@@ -14,62 +14,62 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DialogActivity"
+            android:name=".Activity.DialogActivity"
             android:label="DialogActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".Activity.ChatActivity"
             android:label="@string/title_activity_chat"
             android:theme="@style/AppTheme.NoActionBar.ChatActivity" />
         <activity
-            android:name=".SearchActivity"
+            android:name=".Activity.SearchActivity"
             android:label="@string/title_activity_search"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BoardActivity"
+            android:name=".Activity.BoardActivity"
             android:label="@string/title_activity_board"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:label="사필귀정"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activity.RegisterActivity"
             android:label="RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BoardDetailActivity"
+            android:name=".Activity.BoardDetailActivity"
             android:label="@string/title_activity_board_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".Activity.DetailActivity"
             android:label="DetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CommentActivity"
+            android:name=".Activity.CommentActivity"
             android:label="@string/title_activity_comment" />
         <activity
-            android:name=".WriteActivity"
+            android:name=".Activity.WriteActivity"
             android:label="@string/title_activity_write" />
         <activity
-            android:name=".ChartActivity"
+            android:name=".Activity.ChartActivity"
             android:label="@string/title_activity_chart" />
         <activity
-            android:name=".SurveyCreateActivity"
+            android:name=".Activity.SurveyCreateActivity"
             android:label="@string/title_activity_survey_create" />
         <activity
-            android:name=".SurveyDoActivity"
+            android:name=".Activity.SurveyDoActivity"
             android:label="@string/title_activity_survey_do" />
         <activity
-            android:name=".SurveyChartActivity"
+            android:name=".Activity.SurveyChartActivity"
             android:label="@string/title_activity_survey_chart"></activity>
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activity.SplashActivity"
             android:label="사필귀정"
             android:theme="@style/AppTheme.NoActionBar.FullScreen">
 

@@ -1,4 +1,4 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,10 +12,13 @@ import com.example.khj_pc.gaonnuri.Adapter.BoardRecyclerViewAdapter
 import com.example.khj_pc.gaonnuri.Adapter.DetailViewPageAdapter
 import com.example.khj_pc.gaonnuri.Data.Board
 import com.example.khj_pc.gaonnuri.Listener.DetailNavigationListener
-import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Data.SingleRoomResult
+import com.example.khj_pc.gaonnuri.R
 import kotlinx.android.synthetic.main.activity_detail.*
-import com.example.khj_pc.gaonnuri.Listener.MainNavigationListener
+import com.example.khj_pc.gaonnuri.Service.PostService
+import com.example.khj_pc.gaonnuri.Service.RoomService
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 import kotlinx.android.synthetic.main.app_bar_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
 import kotlinx.android.synthetic.main.content_board.*
