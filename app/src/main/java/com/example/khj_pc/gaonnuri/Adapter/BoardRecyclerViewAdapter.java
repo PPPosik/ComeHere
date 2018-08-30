@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.khj_pc.gaonnuri.BoardDetailActivity;
+import com.example.khj_pc.gaonnuri.Activity.BoardDetailActivity;
 import com.example.khj_pc.gaonnuri.Data.Board;
 import com.example.khj_pc.gaonnuri.R;
 

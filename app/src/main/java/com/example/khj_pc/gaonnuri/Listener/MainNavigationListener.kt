@@ -7,6 +7,9 @@ import android.support.v4.view.GravityCompat
 import android.view.MenuItem
 import android.support.v4.widget.DrawerLayout
 import com.example.khj_pc.gaonnuri.*
+import com.example.khj_pc.gaonnuri.Activity.LoginActivity
+import com.example.khj_pc.gaonnuri.Activity.SearchActivity
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 
 public class MainNavigationListener(val context : Context, val drawer : DrawerLayout) : NavigationView.OnNavigationItemSelectedListener{
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

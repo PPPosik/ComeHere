@@ -1,4 +1,4 @@
-package com.example.khj_pc.gaonnuri;
+package com.example.khj_pc.gaonnuri.Activity;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.khj_pc.gaonnuri.Data.SurveyResult;
+import com.example.khj_pc.gaonnuri.R;
 
 import java.util.ArrayList;
 

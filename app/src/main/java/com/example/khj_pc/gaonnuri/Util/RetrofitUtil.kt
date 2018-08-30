@@ -1,29 +1,14 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Util
 
 import android.content.Context
-import android.net.Uri
-import android.widget.ImageButton
-import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-
-import java.io.File
-
+import com.example.khj_pc.gaonnuri.SharedPreferenceUtil
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import com.google.gson.reflect.TypeToken
-import com.google.gson.Gson
-
-
-
-
-/**
- * Created by baehyeonbin on 2017. 9. 3..
- */
+import java.io.File
 
 object RetrofitUtil {
 
@@ -68,38 +53,3 @@ object RetrofitUtil {
         return RequestBody.create(MediaType.parse(MULTIPART_FORM_DATA), value)
     }
 }
-
-fun ImageView.loadImage(url : Uri, context: Context){//수정 할 때
-    Glide.with(context).load(url).apply(RequestOptions().centerCrop()).into(this)
-}
-
-fun ImageView.loadUrl(url : String) {
-    Glide.with(context).load(url).into(this)
-}
-
-fun ImageButton.loadImageFromUrl(url : String) {
-    Glide.with(context).load(url).into(this)
-}
-
-object SharedPreferenceUtil {
-    fun getPreference(context: Context, key: String): String? {
-        val sharedPreferences = context.getSharedPreferences("gaonnuri", Context.MODE_PRIVATE)
-        return sharedPreferences.getString(key, null)
-    }
-
-    fun savePreferences(context: Context, key: String, data: String) {
-        val sharedPreferences = context.getSharedPreferences("gaonnuri", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString(key, data)
-        editor.commit()
-    }
-
-    fun removePreferences(context: Context, key: String) {
-        val pref = context.getSharedPreferences("gaonnuri", Context.MODE_PRIVATE)
-        val editor = pref.edit()
-        editor.remove(key)
-        editor.commit()
-    }
-}
-
-

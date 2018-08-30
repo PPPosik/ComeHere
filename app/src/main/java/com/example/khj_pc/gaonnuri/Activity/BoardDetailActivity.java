@@ -1,9 +1,7 @@
-package com.example.khj_pc.gaonnuri;
+package com.example.khj_pc.gaonnuri.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -12,12 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.SliderLayout;
-import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.example.khj_pc.gaonnuri.Data.Board;
 import com.example.khj_pc.gaonnuri.Data.SingleBoardResult;
-
-import java.util.ArrayList;
+import com.example.khj_pc.gaonnuri.R;
+import com.example.khj_pc.gaonnuri.Service.PostService;
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil;
 
 import retrofit2.Call;
 import retrofit2.Callback;

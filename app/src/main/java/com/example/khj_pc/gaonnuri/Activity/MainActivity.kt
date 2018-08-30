@@ -1,6 +1,5 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
@@ -14,6 +13,10 @@ import com.example.khj_pc.gaonnuri.Adapter.RecyclerViewItemAdapter
 import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Data.UserResult
 import com.example.khj_pc.gaonnuri.Listener.MainNavigationListener
+import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Service.UserService
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*

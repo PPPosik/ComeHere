@@ -1,4 +1,4 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
 import android.os.Bundle
 import android.app.Activity
@@ -6,7 +6,6 @@ import android.support.percent.PercentLayoutHelper
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.LinearSnapHelper
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.SnapHelper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -16,6 +15,9 @@ import android.widget.TextView
 
 import com.example.khj_pc.gaonnuri.Adapter.ChartRecyclerViewAdapter
 import com.example.khj_pc.gaonnuri.Data.*
+import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Service.MachineLearningService
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
 import kotlinx.android.synthetic.main.content_chart.*
 import retrofit2.Call
 import retrofit2.Callback

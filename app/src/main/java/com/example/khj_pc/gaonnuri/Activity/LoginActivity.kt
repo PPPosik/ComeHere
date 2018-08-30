@@ -1,4 +1,4 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
 import android.content.Intent
 import android.os.Build
@@ -7,14 +7,16 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.example.khj_pc.gaonnuri.Data.LoginResult
 import com.example.khj_pc.gaonnuri.Data.LoginUser
-import com.example.khj_pc.gaonnuri.Data.User
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.widget.Toast
-
+import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Service.UserService
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 
 
 class LoginActivity : AppCompatActivity() {

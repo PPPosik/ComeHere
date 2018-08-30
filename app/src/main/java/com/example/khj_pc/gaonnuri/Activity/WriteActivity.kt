@@ -1,4 +1,4 @@
-package com.example.khj_pc.gaonnuri
+package com.example.khj_pc.gaonnuri.Activity
 
 import android.os.Bundle
 import android.app.Activity
@@ -7,13 +7,16 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.MediaStore
 import android.util.Log
-import kotlinx.android.synthetic.main.item_write_image.*
 import org.jetbrains.anko.toast
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.khj_pc.gaonnuri.Data.Board
 import com.example.khj_pc.gaonnuri.Data.Result
+import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Service.PostService
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
+import com.example.khj_pc.gaonnuri.Util.loadImage
 import kotlinx.android.synthetic.main.content_write.*
 import kotlinx.android.synthetic.main.item_write_image.view.*
 import okhttp3.MultipartBody
