@@ -42,10 +42,12 @@ public class DetailNavigationListener(val context : Context, val drawer : Drawer
             }
             R.id.detail_menu_survey_join -> {
                 var intent: Intent = Intent(context, SurveyDoActivity::class.java)
+                intent.putExtra("id", id)
                 context.startActivity(intent)
             }
             R.id.detail_menu_survey_result -> {
                 var intent: Intent = Intent(context, SurveyChartActivity::class.java)
+                intent.putExtra("id", id)
                 context.startActivity(intent)
             }
             R.id.detail_menu_result -> {

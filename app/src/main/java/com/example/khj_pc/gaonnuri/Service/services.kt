@@ -64,4 +64,10 @@ interface MachineLearningService {
 interface SurveyService {
     @POST("survey/create")
     fun createSurvey(@Body surveyData : SurveyData) : Call<SurveyResponse>
+
+    @POST("survey/get_survey")
+    fun getSurvey(@Body surveyRoomId : SurveyRoomID) : Call<SurveyResponseData>
+
+    @POST("survey/submit_survey")
+    fun submitSurvey(@Body surveyData: SurveyData) : Call<SurveyResponseData>
 }

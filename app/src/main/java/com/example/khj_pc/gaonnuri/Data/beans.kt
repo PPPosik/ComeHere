@@ -58,7 +58,7 @@ data class SurveyCell(var type : Int, var title : String, val body : ArrayList<S
 
 data class SurveyResultCell(var type : Int, var title : String, val body : ArrayList<SurveyBody>, @SerializedName("write_string") var writeString : ArrayList<String>)
 
-data class SurveyBody(val context : String, val check : Int)
+data class SurveyBody(val context : String, var check : Int)
 
 data class SurveyData(@SerializedName("room_id") val roomId : String,
                       @SerializedName("survey_form") val surveyForm : ArrayList<SurveyCell>)
@@ -68,6 +68,9 @@ data class SurveyResultData(@SerializedName("room_id") val roomId : String,
 
 data class SurveyResponseData(@SerializedName("room_id") val roomId : String,
                           @SerializedName("survey_form") val surveyForm : ArrayList<SurveyCell>,
-                              @SerializedName("data") val survey : ArrayList<SurveyResultCell>)
+                              @SerializedName("data") val survey : ArrayList<SurveyResultCell>,
+                              val message : String)
 
 data class SurveyResponse(val message : String, val data : SurveyResponseData)
+
+data class SurveyRoomID(val room_id : String)
