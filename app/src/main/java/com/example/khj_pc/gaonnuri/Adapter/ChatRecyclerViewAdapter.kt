@@ -10,7 +10,7 @@ import android.widget.TextView
 
 import com.example.khj_pc.gaonnuri.Data.Chat
 import com.example.khj_pc.gaonnuri.R
-import com.example.khj_pc.gaonnuri.SharedPreferenceUtil
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 import kotlinx.android.synthetic.main.item_chat.view.*
 
 import java.util.ArrayList

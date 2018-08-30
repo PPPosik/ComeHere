@@ -87,7 +87,6 @@ class SurveyCreateActivity : Activity() {
                 var surveyCell : SurveyCell = SurveyCell(2, "", ArrayList(),"")
                 var viewModel : SurveyViewModel = SurveyViewModel(customView, surveyCell)
                 viewmodels.add(viewModel)
-
             }
         }
         //        View v = LayoutInflater.from(this).inflate(layout[type], null);

@@ -1,7 +1,6 @@
 package com.example.khj_pc.gaonnuri.Util
 
 import android.content.Context
-import com.example.khj_pc.gaonnuri.SharedPreferenceUtil
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient

@@ -7,9 +7,9 @@ import android.view.Window
 import android.widget.Toast
 import com.example.khj_pc.gaonnuri.Data.Result
 import com.example.khj_pc.gaonnuri.R
-import com.example.khj_pc.gaonnuri.RetrofitUtil
 import com.example.khj_pc.gaonnuri.Service.RoomService
-import com.example.khj_pc.gaonnuri.SharedPreferenceUtil
+import com.example.khj_pc.gaonnuri.Util.RetrofitUtil
+import com.example.khj_pc.gaonnuri.Util.SharedPreferenceUtil
 import kotlinx.android.synthetic.main.custom_dialog.*
 import retrofit2.Call
 import retrofit2.Callback
