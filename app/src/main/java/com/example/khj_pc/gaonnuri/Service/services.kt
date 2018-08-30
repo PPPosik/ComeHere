@@ -67,4 +67,7 @@ interface SurveyService {
 
     @POST("survey/get_survey")
     fun getSurvey(@Body surveyRoomId : SurveyRoomID) : Call<SurveyResponseData>
+
+    @POST("survey/submit_survey")
+    fun submitSurvey(@Body surveyData: SurveyData) : Call<SurveyResponseData>
 }

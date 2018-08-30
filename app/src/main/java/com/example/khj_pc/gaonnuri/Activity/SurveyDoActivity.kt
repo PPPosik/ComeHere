@@ -29,7 +29,6 @@ import java.util.ArrayList
 
 class SurveyDoActivity : Activity() {
 
-    lateinit var surveys: ArrayList<Survey>
     private var linearLayout: LinearLayout? = null
     lateinit var roomId : String
     lateinit var surveyForm : ArrayList<SurveyCell>
@@ -48,14 +47,8 @@ class SurveyDoActivity : Activity() {
 
         roomId = intent.getStringExtra("id")
 
-
-        surveys = ArrayList()
-//        surveys.add(Survey.SurveyText("1. 본인의 이름은?(ex 홍길동)"))
-//        surveys.add(Survey.SurveyOX("2. 다시 행사를 개최한다면 주말이었으면 좋겠다.", true))
-//        surveys.add(Survey.SurveyOX("3. 행사 개최자는 잘생겼다.", false))
-//        surveys.add(Survey.SurveyMultiple("4. 식사중 가장 불만족 스러웠던 식사는?", arrayOf("아침", "점심", "저녁", "야식1")))
-
         loadSurveyData()
+        setListeners()
     }
 
     fun loadSurveyData() {
@@ -112,9 +105,8 @@ class SurveyDoActivity : Activity() {
                 }
                 view.survey_multiple_content1.keyListener = null
 
-//                view.surv = v.findViewById(R.id.survey_multiple_content2)
                 view.survey_multiple_content2.setText(cell.body[1].context)
-                view.survey_multiple_content2.setBackgroundColor(Color.parseColor(if (cell.body[0].check == 1) "#F2F9FE" else "#ffffff"))
+                view.survey_multiple_content2.setBackgroundColor(Color.parseColor(if (cell.body[1].check == 1) "#F2F9FE" else "#ffffff"))
                 view.survey_multiple_content2.setOnClickListener {
                     if(cell.body[1].check == 1) {
                         cell.body[1].check = 0
@@ -125,7 +117,6 @@ class SurveyDoActivity : Activity() {
                 }
                 view.survey_multiple_content2.keyListener = null
 
-//                ee = v.findViewById(R.id.survey_multiple_content3)
                 view.survey_multiple_content3.setText(cell.body[2].context)
                 view.survey_multiple_content3.setBackgroundColor(Color.parseColor(if (cell.body[2].check == 1) "#F2F9FE" else "#ffffff"))
                 view.survey_multiple_content3.setOnClickListener {
@@ -138,21 +129,18 @@ class SurveyDoActivity : Activity() {
                 }
                 view.survey_multiple_content3.keyListener = null
 
-//                ee = v.findViewById(R.id.survey_multiple_content4)
                 view.survey_multiple_content4.setText(cell.body[3].context)
                 view.survey_multiple_content4.setBackgroundColor(Color.parseColor(if (cell.body[3].check == 1) "#F2F9FE" else "#ffffff"))
                 view.survey_multiple_content4.setOnClickListener {
-                    if(cell.body[2].check == 1) {
-                        cell.body[2].check = 0
+                    if(cell.body[3].check == 1) {
+                        cell.body[3].check = 0
                     } else {
                         cell.body[2].check = 1
                     }
                     view.survey_multiple_content4.setBackgroundColor(Color.parseColor(if (cell.body[3].check == 1) "#F2F9FE" else "#ffffff"))
                 }
                 view.survey_multiple_content4.keyListener = null
-                //TODO
 
-//                val e = v.findViewById<EditText>(R.id.survey_title_multiple)
                 view.survey_title_multiple.setText(cell.title)
                 view.survey_title_multiple.keyListener = null
 
@@ -161,9 +149,6 @@ class SurveyDoActivity : Activity() {
 
             } else { // O X Survey
                 val view = LayoutInflater.from(this).inflate(R.layout.item_survey_ox, linearLayout, false)
-
-                //val yes = v.findViewById<TextView>(R.id.survey_create_yes)
-                //val no = v.findViewById<TextView>(R.id.survey_create_no)
                 view.survey_create_yes.setOnClickListener {
                     cell.body[0].check = 1
                     cell.body[1].check = 0
@@ -175,11 +160,6 @@ class SurveyDoActivity : Activity() {
                 view.survey_create_no.setOnClickListener {
                     cell.body[0].check = 0
                     cell.body[1].check = 1
-
-                    Log.d("asdf", "on no click, check status is ${cell.body[1].check}")
-                    Log.d("asdf", "on no click, check status is ${cell.body[0].check}")
-
-
                     view.survey_create_yes.background = resources.getDrawable(if (cell.body[0].check == 1) R.drawable.background_rectangle_light_black_black_content else R.drawable.background_rectangle_light_black_white_content)
                     view.survey_create_yes.setTextColor(Color.parseColor(if (cell.body[0].check == 1) "#ffffff" else "#172434"))
                     view.survey_create_no.background = resources.getDrawable(if (cell.body[1].check == 1 )R.drawable.background_rectangle_light_black_black_content else  R.drawable.background_rectangle_light_black_white_content)
@@ -198,9 +178,40 @@ class SurveyDoActivity : Activity() {
                 survey_create_linear_layout.addView(view)
 
             }
-
-
         }
+    }
 
+    fun setListeners() {
+        sendButton.setOnClickListener {
+            val surveyService = RetrofitUtil.getLoginRetrofit(applicationContext).create(SurveyService::class.java)
+            for(i in 0 until viewModelList.size) {
+                if(viewModelList[i].cell.type == 2) {
+                    viewModelList[i].cell.writeString = viewModelList[i].view.content.text.toString()
+                }
+            }
+            val call = surveyService.submitSurvey(SurveyData(roomId, ArrayList(viewModelList.map { it.cell })))
+            call.enqueue(object : Callback<SurveyResponseData> {
+                override fun onFailure(call: Call<SurveyResponseData>, t: Throwable) {
+                    Log.e(TAG, t.toString())
+                }
+
+                override fun onResponse(call: Call<SurveyResponseData>, response: Response<SurveyResponseData>) {
+                    if(response.body() != null) {
+                        when(response.code()) {
+                            200 -> {
+                                Log.d(TAG, "success, message is.. ${response.body()!!.message}")
+                                toast("설문조사 작성에 성공하였습니다!")
+                                finish()
+                            }
+                            else -> {
+                                toast("네트워크 에러가 발생하였습니다!")
+                                Log.e(TAG, "HTTP Error is occured! error code is ${response.code()}")
+                            }
+                        }
+                    }
+                }
+
+            })
+        }
     }
 }

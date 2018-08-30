@@ -68,7 +68,8 @@ data class SurveyResultData(@SerializedName("room_id") val roomId : String,
 
 data class SurveyResponseData(@SerializedName("room_id") val roomId : String,
                           @SerializedName("survey_form") val surveyForm : ArrayList<SurveyCell>,
-                              @SerializedName("data") val survey : ArrayList<SurveyResultCell>)
+                              @SerializedName("data") val survey : ArrayList<SurveyResultCell>,
+                              val message : String)
 
 data class SurveyResponse(val message : String, val data : SurveyResponseData)
 
