@@ -56,7 +56,9 @@ class SurveyDoActivity : Activity() {
         val call = surveyService.getSurvey(SurveyRoomID(roomId))
         call.enqueue(object : Callback<SurveyResponseData> {
             override fun onFailure(call: Call<SurveyResponseData>, t: Throwable) {
+                toast("설문조사가 아직 생성되지 않았습니다")
                 Log.e(TAG, t.toString())
+                finish()
             }
 
             @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -70,6 +72,7 @@ class SurveyDoActivity : Activity() {
                         }
 
                         else -> {
+                            finish()
                             Log.e(TAG, "http error code is ${response.code()}")
                         }
                     }
