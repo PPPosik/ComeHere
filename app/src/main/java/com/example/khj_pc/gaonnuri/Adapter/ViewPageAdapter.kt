@@ -22,7 +22,13 @@ class ViewPageAdapter(val room: Room, context: Context) : PagerAdapter() {
             val customDialog = CustomDialog(container.context, room._id)
             customDialog.callFunction()
         }
-        v.imageView.loadUrl("http://ssumon.com:23002/images/${room.images[position]}")
+        var url : String = ""
+        if(room.images[position].contains("http") || room.images[position].contains("HTTP")) {
+            url = room.images[position]
+        } else {
+            url = "http://\"http://13.125.103.237:23002/images/${room.images[position]}"
+        }
+        v.imageView.loadUrl(url)
         v.contextText.text = Html.fromHtml(room.context)
         v.requestPersonId.text = room.requestPersonId
         v.questName.text = room.questionName

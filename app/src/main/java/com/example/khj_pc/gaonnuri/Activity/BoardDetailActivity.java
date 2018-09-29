@@ -52,7 +52,12 @@ public class BoardDetailActivity extends AppCompatActivity {
         }
         sliderLayout = findViewById(R.id.slider);
         for (String s : board.getImageURL()) {
-            String url = "http://ssumon.com:23002/images/" + s;
+            String url;
+            if(s.contains("http") || s.contains("HTTP")) {
+                url = s;
+            } else {
+                url = "http://13.125.103.237:23002/images/" + s;
+            }
             DefaultSliderView defaultSliderView = new DefaultSliderView(this);
             defaultSliderView.image(url).setScaleType(DefaultSliderView.ScaleType.CenterCrop);
             sliderLayout.addSlider(defaultSliderView);

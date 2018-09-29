@@ -115,8 +115,13 @@ class DetailActivity : AppCompatActivity() {
     fun setDetailViewPager(){
         for (i in 0 until imgUrl.size) {
             var s : String = imgUrl[i]
-            s = "http://ssumon.com:23002/images/$s"
-            imgUrl.set(i, s)
+            var url : String = ""
+            if(s.contains("http") || s.contains("HTTP")) {
+                url = s
+            } else {
+                url = "http://13.125.103.237:23002/images/$s"
+            }
+            imgUrl.set(i, url)
         }
         detail_viewpager.adapter = DetailViewPageAdapter(imgUrl, this)
         detail_tablayout.setupWithViewPager(detail_viewpager, true)
