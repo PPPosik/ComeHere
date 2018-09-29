@@ -46,7 +46,7 @@ class ChatActivity : AppCompatActivity() {
         roomId = intent.getStringExtra("id")
         Log.d("roomid", roomId)
 
-        mSocket = IO.socket("http://ssumon.com:23002")
+        mSocket = IO.socket("http://13.125.103.237:23002")
         mSocket.connect()
 
         setSocket()
