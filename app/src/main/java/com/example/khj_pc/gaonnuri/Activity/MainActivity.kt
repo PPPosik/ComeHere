@@ -61,23 +61,10 @@ class MainActivity : AppCompatActivity() {
         if(dataList.isNotEmpty()) {
             Log.d("type", "type is ${dataList[0].type}")
             competitionRecyclerView.layoutManager = GridLayoutManager(this, 3)
-            competitionRecyclerView.adapter = RecyclerViewItemAdapter(dataList.filter { it.type == "공모전" }, this)
+            competitionRecyclerView.adapter = RecyclerViewItemAdapter(dataList, this)
             competitionRecyclerView.isNestedScrollingEnabled = false
 
-            seminarRecyclerView.layoutManager = GridLayoutManager(this, 3)
-            seminarRecyclerView.adapter = RecyclerViewItemAdapter(dataList.filter { it.type == "콘서트" }, this)
-            seminarRecyclerView.isNestedScrollingEnabled = false
         }
-    }
-
-    fun testDataAdd() {
-        testData.add("AAA")
-        testData.add("BBB")
-        testData.add("CCC")
-        testData.add("DDD")
-        testData.add("EEE")
-        testData.add("FFF")
-        testData.add("GGG")
     }
 
     override fun onResume() {

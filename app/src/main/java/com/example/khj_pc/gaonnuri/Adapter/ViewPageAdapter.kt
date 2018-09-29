@@ -4,6 +4,7 @@ import android.support.v4.view.PagerAdapter
 import android.view.View
 import android.view.ViewGroup
 import android.content.Context
+import android.text.Html
 import android.view.LayoutInflater
 import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Dialog.CustomDialog
@@ -22,7 +23,7 @@ class ViewPageAdapter(val room: Room, context: Context) : PagerAdapter() {
             customDialog.callFunction()
         }
         v.imageView.loadUrl("http://ssumon.com:23002/images/${room.images[position]}")
-        v.contextText.text = room.context
+        v.contextText.text = Html.fromHtml(room.context)
         v.requestPersonId.text = room.requestPersonId
         v.questName.text = room.questionName
 
