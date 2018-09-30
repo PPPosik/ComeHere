@@ -50,7 +50,6 @@ class DetailActivity : AppCompatActivity() {
         id = intent.getStringExtra("id")
         setNavigationDrawer()
         setListeners()
-        setBoardDummyData()
         loadTopThree()
         loadData()
 
@@ -69,17 +68,6 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
-    fun setBoardDummyData() {
-        boards.add(Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1))
-        boards.add(Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1))
-        boards.add(Board("자유게시물", "배현빈", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 21, 1))
-
-        for (b in boards) {
-            for (i in 0..2)
-                b.content = b.content + "\n" + b.content
-        }
-    }
-
     fun loadTopThree() {
         var postService : PostService = RetrofitUtil.getLoginRetrofit(applicationContext).create(PostService::class.java)
         var call : Call<ArrayList<Board>> = postService.getTopThree(id)
@@ -90,6 +78,7 @@ class DetailActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<ArrayList<Board>>?, response: Response<ArrayList<Board>>?) {
                 if(response!!.body() != null) {
+                    Log.d(TAG, "code : ${response.code()}")
                     when(response.code()) {
                         200 -> {
                             boards = response.body()!!
@@ -99,6 +88,8 @@ class DetailActivity : AppCompatActivity() {
                             Log.e(TAG, "error code : ${response.code()}")
                         }
                     }
+                } else {
+                    toast("불러 올 인기 게시글이 없습니다.")
                 }
             }
 
@@ -162,13 +153,13 @@ class DetailActivity : AppCompatActivity() {
                             room = response.body()!!
                             imgUrl = ArrayList(room.images)
 
-                            if(room.questionName.length > 7){
+                            if(room.title.length > 7){
                                 questName.textSize = 16f
                             }
                             else{
                                 questName.textSize = 32f
                             }
-                            questName.text = room.questionName
+                            questName.text = room.title
 
                             setDetailViewPager()
                         }

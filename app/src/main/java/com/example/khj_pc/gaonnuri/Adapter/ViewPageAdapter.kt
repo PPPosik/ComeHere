@@ -10,6 +10,7 @@ import com.example.khj_pc.gaonnuri.Data.Room
 import com.example.khj_pc.gaonnuri.Dialog.CustomDialog
 import com.example.khj_pc.gaonnuri.R
 import com.example.khj_pc.gaonnuri.Util.loadUrl
+import com.example.khj_pc.gaonnuri.Util.loadUrlWithCenterCrop
 import kotlinx.android.synthetic.main.pager_adapter.view.*
 
 class ViewPageAdapter(val room: Room, context: Context) : PagerAdapter() {
@@ -24,11 +25,11 @@ class ViewPageAdapter(val room: Room, context: Context) : PagerAdapter() {
         }
         var url : String = ""
         if(room.images[position].contains("http") || room.images[position].contains("HTTP")) {
-            url = room.images[position]
+            url = room.images[position].toLowerCase()
         } else {
             url = "http://\"http://13.125.103.237:23002/images/${room.images[position]}"
         }
-        v.imageView.loadUrl(url)
+        v.imageView.loadUrlWithCenterCrop(url)
         v.contextText.text = Html.fromHtml(room.context)
         v.requestPersonId.text = room.requestPersonId
         v.questName.text = room.questionName
