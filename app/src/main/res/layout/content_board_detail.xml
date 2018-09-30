@@ -50,7 +50,7 @@
                     android:lineSpacingExtra="6sp"
                     android:textColor="#182535"
                     android:textSize="40sp"
-                    tools:text="Big Title" />
+                    tools:text="제목" />
 
                 <TextView
                     android:id="@+id/board_detail_text1"
@@ -62,7 +62,7 @@
                     android:lineSpacingExtra="10sp"
                     android:textColor="#182535"
                     android:textSize="20sp"
-                    tools:text="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt. " />
+                    tools:text="내용" />
 
                 <TextView
                     android:id="@+id/board_detail_text2"
@@ -74,7 +74,7 @@
                     android:lineSpacingExtra="10sp"
                     android:textColor="#182535"
                     android:textSize="14sp"
-                    tools:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
+                    tools:text="내용" />
 
 
                 <android.support.v7.widget.CardView

@@ -101,13 +101,13 @@ class SurveyCreateActivity : Activity() {
             Log.d("count", "count = ${count}")
             when(viewmodels[i].cell.type) {
                 0 -> {
-                    viewmodels[i].view.survey_title_multiple.hint = "성공"
+                    viewmodels[i].view.survey_title_multiple.hint = "다지선다 문항"
                 }
                 1 -> {
-                    viewmodels[i].view.survey_title_ox.setHint("성공2")
+                    viewmodels[i].view.survey_title_ox.setHint("O/X")
                 }
                 2 -> {
-                    viewmodels[i].view.survey_title_text.setHint("성공3")
+                    viewmodels[i].view.survey_title_text.setHint("주관식")
                 }
             }
         }

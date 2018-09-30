@@ -49,7 +49,7 @@
                     android:layout_marginRight="32dp"
                     android:layout_marginTop="33.5dp"
                     android:background="@android:color/transparent"
-                    android:hint="Big Title"
+                    android:hint="제목"
                     android:lineSpacingExtra="6sp"
                     android:textColor="#182535"
                     android:textSize="40sp" />
@@ -57,12 +57,12 @@
                 <EditText
                     android:gravity="top"
                     android:id="@+id/contextEditText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="51dp"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="32dp"
-                    android:hint="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt. \nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    android:hint="내용"
                     android:lineSpacingExtra="10sp"
                     android:textColor="#182535"
                     android:textSize="20sp" />
