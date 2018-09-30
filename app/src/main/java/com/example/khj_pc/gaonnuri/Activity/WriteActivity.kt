@@ -76,6 +76,7 @@ class WriteActivity : Activity(), EasyPermissions.PermissionCallbacks {
             }
 
             override fun onResponse(call: Call<Result>, response: Response<Result>) {
+                Log.e(TAG, response.code().toString())
                 if(response.body() != null) {
                     when(response.code()) {
                         200 -> {
@@ -87,6 +88,8 @@ class WriteActivity : Activity(), EasyPermissions.PermissionCallbacks {
                             Log.e(TAG, "error, error http code is ${response.code()}")
                         }
                     }
+                } else {
+
                 }
             }
 

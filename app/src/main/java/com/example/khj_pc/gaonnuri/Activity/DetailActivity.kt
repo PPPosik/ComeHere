@@ -138,6 +138,12 @@ class DetailActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onResume() {
+        super.onResume()
+        loadData()
+        loadTopThree()
+    }
+
     fun loadData() {
         var roomService : RoomService = RetrofitUtil.getLoginRetrofit(applicationContext).create(RoomService::class.java)
         var call : Call<SingleRoomResult> = roomService.getSingleRoomInfo(id)
