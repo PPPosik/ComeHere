@@ -65,19 +65,24 @@
             android:layout_alignTop="@+id/survey_create_add"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
+            android:background="@drawable/background_rectangle_yellow"
             android:text="작성완료" />
 
-        <ImageView
+        <android.support.design.widget.FloatingActionButton
             android:id="@+id/survey_create_add"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+            android:layout_gravity="right|bottom"
             android:layout_margin="30dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
             android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:src="@drawable/ic_add_circle_light_black_24dp" />
-
+            app:backgroundTint="@android:color/white"
+            app:layout_anchor="@+id/app_bar"
+            app:srcCompat="@drawable/ic_add_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
+        
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
