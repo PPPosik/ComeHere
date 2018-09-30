@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        supportActionBar!!.title = ""
 
 //        var intent: Intent = Intent(this, SplashActivity::class.java)
 //        startActivity(intent)
