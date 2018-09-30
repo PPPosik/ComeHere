@@ -47,10 +47,10 @@ public class BoardRecyclerViewAdapter extends RecyclerView.Adapter<BoardRecycler
     public void onBindViewHolder(@NonNull BoardRecyclerViewAdapter.BoardRecyclerViewViewHolder holder, int position) {
         final Board board = boards.get(position);
         if (board.getType() == 0) { //type 0이면 공지글
-            holder.root.setBackgroundColor(Color.parseColor("#cadffa"));
+            holder.root.setBackgroundColor(Color.parseColor("#fff7d9"));
         } else {
             int idx = position - getNoticeCnt();
-            holder.root.setBackgroundColor(Color.parseColor(idx % 2 == 1 ? "#f5f9ff" : "#ffffff"));
+            holder.root.setBackgroundColor(Color.parseColor(idx % 2 == 1 ? "#fff7d9" : "#ffffff"));
         }
         holder.root.setOnClickListener(new View.OnClickListener() {
             @Override

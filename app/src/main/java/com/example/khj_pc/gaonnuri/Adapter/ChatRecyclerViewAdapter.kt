@@ -25,7 +25,7 @@ class ChatRecyclerViewAdapter(private val context: Context, var chats: ArrayList
     override fun onBindViewHolder(holder: ChatRecyclerViewAdapter.ChatRecyclerViewViewHolder, position: Int) {
         val chat = chats[position]
         val name : String = SharedPreferenceUtil.getPreference(context, "name")!!
-        holder.root.setBackgroundColor(Color.parseColor(if (chat.userName == name) "#f5f9ff" else "#ffffff"))
+        holder.root.setBackgroundColor(Color.parseColor(if (chat.userName == name) "#fff7d9" else "#ffffff"))
         holder.root.item_chat_username.text = chat.userName
         holder.root.item_chat_time.text = chat.time
         holder.root.item_chat_content.text = chat.content

@@ -26,7 +26,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="139.5dp"
+                    android:layout_height="87dp"
                     android:background="@color/colorPrimary">
 
                     <TextView
@@ -40,14 +40,22 @@
                         android:textSize="32sp" />
                 </RelativeLayout>
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="11dp"
+                    android:src="@drawable/triangle" />
+
+
                 <EditText
                     android:id="@+id/titleEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
                     android:layout_marginLeft="32dp"
-                    android:layout_marginRight="32dp"
                     android:layout_marginTop="33.5dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginBottom="24dp"
                     android:background="@android:color/transparent"
                     android:hint="Big Title"
                     android:lineSpacingExtra="6sp"
@@ -55,13 +63,13 @@
                     android:textSize="40sp" />
 
                 <EditText
-                    android:gravity="top"
                     android:id="@+id/contextEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="51dp"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="32dp"
+                    android:layout_marginBottom="51dp"
+                    android:gravity="top"
                     android:hint="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt. \nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     android:lineSpacingExtra="10sp"
                     android:textColor="#182535"
@@ -83,18 +91,18 @@
 
                 <TextView
                     android:id="@+id/sendButton"
-                    android:clickable="true"
                     android:layout_width="148dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="38dp"
                     android:background="@drawable/background_rectangle_light_black"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:gravity="center"
                     android:lineSpacingExtra="18sp"
                     android:text="작성완료"
                     android:textColor="#172434"
-                    android:textSize="12sp"
-                    android:focusable="true" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
         </ScrollView>

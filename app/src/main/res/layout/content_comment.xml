@@ -21,17 +21,11 @@
         </android.support.v7.widget.RecyclerView>
 
         <RelativeLayout
+            android:background="#24fec900"
             android:id="@+id/comment_console"
             android:layout_width="match_parent"
             android:layout_height="53.7dp"
             android:layout_alignParentBottom="true">
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_alignParentTop="true"
-                android:background="#bce0fd" />
 
             <EditText
                 android:id="@+id/comment_content"

@@ -15,9 +15,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="windowNoTitle">true</item>
     </style>
-  <style name="AppTheme.NoActionBar.FullScreen">
-      <item name="android:windowFullscreen">true</item>
-      <item name="android:statusBarColor">@color/colorPrimary</item>
+
+    <style name="AppTheme.NoActionBar.FullScreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -25,7 +26,7 @@
     </style>
 
     <style name="AppTheme.NoActionBar.ChatActivity">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:statusBarColor">#fff7d9</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/chatcolor</item>
         <item name="colorPrimaryDark">@color/chatcolor</item>

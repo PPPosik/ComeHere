@@ -84,7 +84,7 @@
                         android:layout_marginTop="24dp"
                         android:gravity="center_horizontal"
                         android:lineSpacingExtra="8sp"
-                        android:text="사필귀정의 분석"
+                        android:text="분석"
                         android:textColor="@color/colorPrimary"
                         android:textSize="23sp"
                         android:textStyle="bold" />

@@ -1,5 +1,6 @@
 package com.example.khj_pc.gaonnuri.Activity
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
@@ -44,9 +45,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.title = ""
 
-//        var intent: Intent = Intent(this, SplashActivity::class.java)
-//        startActivity(intent)
-
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
@@ -56,6 +54,11 @@ class MainActivity : AppCompatActivity() {
         nav_view.getHeaderView(0).name.text = SharedPreferenceUtil.getPreference(applicationContext, "name")!!
         nav_view.getHeaderView(0).idText.text = SharedPreferenceUtil.getPreference(applicationContext, "username")
         loadData()
+
+
+//        var intent: Intent = Intent(this, BoardActivity::class.java)
+//        startActivity(intent)
+
     }
 
     fun setRecyclerView() {
