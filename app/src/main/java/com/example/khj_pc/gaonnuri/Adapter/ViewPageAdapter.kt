@@ -25,7 +25,7 @@ class ViewPageAdapter(val room: Room, context: Context) : PagerAdapter() {
         }
         var url : String = ""
         if(room.images[position].contains("http") || room.images[position].contains("HTTP")) {
-            url = room.images[position]
+            url = room.images[position].toLowerCase()
         } else {
             url = "http://\"http://13.125.103.237:23002/images/${room.images[position]}"
         }
