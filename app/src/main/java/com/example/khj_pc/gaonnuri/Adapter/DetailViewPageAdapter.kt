@@ -10,6 +10,8 @@ import android.os.AsyncTask
 import android.view.LayoutInflater
 import android.widget.ImageView
 import com.example.khj_pc.gaonnuri.R
+import com.example.khj_pc.gaonnuri.Util.BitmapUtil
+import com.example.khj_pc.gaonnuri.Util.loadUrlWithCenterCrop
 import kotlinx.android.synthetic.main.content_detail_viewpage.*
 import kotlinx.android.synthetic.main.content_detail_viewpage.view.*
 import java.io.InputStream
@@ -30,7 +32,7 @@ class DetailViewPageAdapter(val items : ArrayList<String>, context : Context) : 
     }
 
     private fun addImg(view : View, item : String){
-        DownloadImageTask(view.detail_imageView).execute(item)
+        view.detail_imageView.loadUrlWithCenterCrop(item)
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
@@ -56,6 +58,7 @@ private class DownloadImageTask(val bmImage : ImageView) : AsyncTask<String, Voi
         try{
             val ins : InputStream = URL(url).openStream()
             icon = BitmapFactory.decodeStream(ins)
+            icon = BitmapUtil.cropCenterBitmap(icon, icon.width, 500)!!
         }
         catch (e : Exception){
             e.printStackTrace()

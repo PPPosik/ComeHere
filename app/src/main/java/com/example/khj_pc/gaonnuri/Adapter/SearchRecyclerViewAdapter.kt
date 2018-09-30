@@ -29,8 +29,8 @@ class SearchRecyclerViewAdapter(private val context: Context, private var rooms:
     override fun onBindViewHolder(holder: SearchRecyclerViewViewHolder, position: Int) {
         val room = arrayList[position]
         if(isFiltered) {
-            holder.root.item_search_ppl.text = room.peopleNumMax.toString()
-            holder.root.item_search_name.text = room.questionName
+            holder.root.item_search_ppl.text = (room.peopleNumMax % 50).toString()
+            holder.root.item_search_name.text = room.title
             holder.root.setOnClickListener {
                 var intent : Intent = Intent(context, DialogActivity::class.java)
                 intent.putExtra("room", room)
@@ -60,7 +60,7 @@ class SearchRecyclerViewAdapter(private val context: Context, private var rooms:
             arrayList.addAll(rooms)
         } else {
             for (room in rooms) {
-                val name : String? = room.questionName
+                val name : String? = room.title
                 if(name != null) {
                     Log.d("size name", name)
                     if (name.toLowerCase().contains(charText)) {

@@ -15,6 +15,10 @@ fun ImageView.loadUrl(url : String) {
     Glide.with(context).load(url).into(this)
 }
 
+fun ImageView.loadUrlWithCenterCrop(url : String) {
+    Glide.with(context).load(url).apply(RequestOptions().centerCrop()).into(this)
+}
+
 fun ImageButton.loadImageFromUrl(url : String) {
     Glide.with(context).load(url).into(this)
 }

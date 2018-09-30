@@ -97,7 +97,6 @@ class MainActivity : AppCompatActivity() {
                 if (response != null && response.isSuccessful) {
                     when (response.code()) {
                         200 -> {
-                            toast("성공적으로 데이터가 로딩되었습니다.")
                             dataList = response.body()!!.room_string
                             Log.d("size", dataList.size.toString())
                             setRecyclerView()

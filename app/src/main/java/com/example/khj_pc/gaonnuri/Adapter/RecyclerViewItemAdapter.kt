@@ -26,9 +26,8 @@ class RecyclerViewItemAdapter(val items : List<Room>, val context : Context) : R
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var room : Room? = items.get(position)
         if(room != null) {
-            holder.button.text = items.get(position).questionName
+            holder.button.text = items.get(position).title
             holder.button.setOnClickListener {
-                context.toast(holder.button.text)
                 intent = Intent(context, DetailActivity::class.java)
                 intent.putExtra("id", room._id)
                 context.startActivity(intent)
