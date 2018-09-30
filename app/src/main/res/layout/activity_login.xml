@@ -27,7 +27,7 @@
                 android:gravity="center_horizontal"
                 android:lineSpacingExtra="-30sp"
                 android:text="어서와"
-                android:textColor="@android:color/black"
+                android:textColor="#172434"
                 android:textSize="70sp"
 
                 />
@@ -40,7 +40,7 @@
                 android:gravity="center_horizontal"
                 android:lineSpacingExtra="20sp"
                 android:text="'어서와'에 오신걸 환영합니다."
-                android:textColor="@android:color/black"
+                android:textColor="#172434"
                 android:textSize="20sp"
 
                 />
@@ -73,7 +73,7 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:singleLine="true"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="#172434" />
 
     <EditText
         android:id="@+id/login_password"
@@ -87,7 +87,7 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:singleLine="true"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="#172434" />
 
     <View
         android:layout_width="24dp"
